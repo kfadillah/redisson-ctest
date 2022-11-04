@@ -7,9 +7,9 @@ The module is used to generate the pair of configuration parameters and test met
 ## Required files to generate mapping
 - test_method_list.json - `get_test_method_list.py` will generate a list of test methods used by redisson.
 - conf_params.txt - manually collected from `app/redisson/redisson/src/main/java/org/redisson/config`
-You need to put all generated files into the `results/cassandra` directory.
+You need to put all generated files into the `results/redisson` directory.
 
-## How to set up cassadra
+## How to set up redisson
 - clone redisson, `git clone https://github.com/redisson/redisson.git app/redisson && cd app/redisson`
 - checkout commit, `git checkout 96da883`
 - apply logging patch, `git apply ../../ctest-logging.patch`
