@@ -165,6 +165,8 @@ class Runner:
             start_time_for_this_method = time.time()
             if self.module == "alluxio-core":
                 cmd = ["mvn", "surefire:test", "-Dtest=" + method, "-DfailIfNoTests=false"]
+            elif self.module == "redisson":
+                cmd = ["mvn", "surefire:test", "-Dtest=" + method, "-DredisBinary=/usr/bin/redis-server"]
             else:
                 cmd = ["mvn", "surefire:test", "-Dtest=" + method]
             print ("mvn surefire:test -Dtest="+method)
