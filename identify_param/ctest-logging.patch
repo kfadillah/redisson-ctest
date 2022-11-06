@@ -1,3 +1,47 @@
+diff --git a/pom.xml b/pom.xml
+index a4951c15f..148b9865e 100644
+--- a/pom.xml
++++ b/pom.xml
+@@ -17,7 +17,7 @@
+     </organization>
+ 
+     <properties>
+-        <maven.test.skip>true</maven.test.skip>
++        <maven.test.skip>false</maven.test.skip>
+         <source.version>1.8</source.version>
+         <javadoc.version>8</javadoc.version>
+         <release.version>8</release.version>
+diff --git a/redisson/pom.xml b/redisson/pom.xml
+index fbf5af41a..2abd159ac 100644
+--- a/redisson/pom.xml
++++ b/redisson/pom.xml
+@@ -443,7 +443,7 @@
+                     <configuration>
+                         <redirectTestOutputToFile>true</redirectTestOutputToFile>
+ 
+-                        <excludes>
++                        <!-- <excludes>
+                             <exclude>LRUCacheMapTest</exclude>
+                             <exclude>SoftCacheMapTest</exclude>
+                             <exclude>SpringNamespaceTest</exclude>
+@@ -464,7 +464,7 @@
+                             <exclude>RedissonSetReactiveTest</exclude>
+                             <exclude>RedissonSetTest</exclude>
+                             <exclude>RedissonRedLockTest</exclude>
+-                            <exclude>RedissonMapCacheReactiveTest</exclude>
++                            <exclude>RedissonMapCacheReactiveTest</exclude> -->
+ 
+     <!--
+ 
+@@ -475,7 +475,7 @@
+                             <exclude>RedissonBlockingQueueTest</exclude>
+                             <exclude>RedissonExecutorServiceTest</exclude>
+     -->
+-                        </excludes>
++                        <!-- </excludes> -->
+                         <forkCount>4</forkCount>
+                         <reuseForks>true</reuseForks>
+                         <argLine>
 diff --git a/redisson/src/main/java/org/redisson/config/BaseConfig.java b/redisson/src/main/java/org/redisson/config/BaseConfig.java
 index 79ee412ba..1d1784abd 100644
 --- a/redisson/src/main/java/org/redisson/config/BaseConfig.java
