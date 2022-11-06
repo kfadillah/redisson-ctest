@@ -320,7 +320,7 @@ index 79ee412ba..70c5ba0bc 100644
 +    }
  }
 diff --git a/redisson/src/main/java/org/redisson/config/BaseMasterSlaveServersConfig.java b/redisson/src/main/java/org/redisson/config/BaseMasterSlaveServersConfig.java
-index b14e1b7f5..b649f7861 100644
+index b14e1b7f5..7cae51944 100644
 --- a/redisson/src/main/java/org/redisson/config/BaseMasterSlaveServersConfig.java
 +++ b/redisson/src/main/java/org/redisson/config/BaseMasterSlaveServersConfig.java
 @@ -17,6 +17,8 @@ package org.redisson.config;
@@ -345,7 +345,7 @@ index b14e1b7f5..b649f7861 100644
       */
      public T setSlaveConnectionPoolSize(int slaveConnectionPoolSize) {
          this.slaveConnectionPoolSize = slaveConnectionPoolSize;
-+        log.warn("[CTEST][SET-PARAM] " + "SlaveConnectionPoolSize"); //CTEST
++        log.warn("[CTEST][SET-PARAM] " + "SlaveConnectionPoolSize" + getStackTrace()); //CTEST
          return (T) this;
      }
      public int getSlaveConnectionPoolSize() {
@@ -357,7 +357,7 @@ index b14e1b7f5..b649f7861 100644
  
      public T setFailedSlaveReconnectionInterval(int failedSlavesReconnectionTimeout) {
          this.failedSlaveReconnectionInterval = failedSlavesReconnectionTimeout;
-+        log.warn("[CTEST][SET-PARAM] " + "FailedSlaveReconnectionInterval"); //CTEST
++        log.warn("[CTEST][SET-PARAM] " + "FailedSlaveReconnectionInterval" + getStackTrace()); //CTEST
          return (T) this;
      }
  
@@ -370,7 +370,7 @@ index b14e1b7f5..b649f7861 100644
       */
      public T setFailedSlaveCheckInterval(int slaveFailsInterval) {
          this.failedSlaveCheckInterval = slaveFailsInterval;
-+        log.warn("[CTEST][SET-PARAM] " + "FailedSlaveCheckInterval"); //CTEST
++        log.warn("[CTEST][SET-PARAM] " + "FailedSlaveCheckInterval" + getStackTrace()); //CTEST
          return (T) this;
      }
      public int getFailedSlaveCheckInterval() {
@@ -382,7 +382,7 @@ index b14e1b7f5..b649f7861 100644
       */
      public T setMasterConnectionPoolSize(int masterConnectionPoolSize) {
          this.masterConnectionPoolSize = masterConnectionPoolSize;
-+        log.warn("[CTEST][SET-PARAM] " + "MasterConnectionPoolSize"); //CTEST
++        log.warn("[CTEST][SET-PARAM] " + "MasterConnectionPoolSize" + getStackTrace()); //CTEST
          return (T) this;
      }
      public int getMasterConnectionPoolSize() {
@@ -394,7 +394,7 @@ index b14e1b7f5..b649f7861 100644
       */
      public T setLoadBalancer(LoadBalancer loadBalancer) {
          this.loadBalancer = loadBalancer;
-+        log.warn("[CTEST][SET-PARAM] " + "LoadBalancer"); //CTEST
++        log.warn("[CTEST][SET-PARAM] " + "LoadBalancer" + getStackTrace()); //CTEST
          return (T) this;
      }
      public LoadBalancer getLoadBalancer() {
@@ -406,7 +406,7 @@ index b14e1b7f5..b649f7861 100644
       */
      public T setSubscriptionConnectionPoolSize(int subscriptionConnectionPoolSize) {
          this.subscriptionConnectionPoolSize = subscriptionConnectionPoolSize;
-+        log.warn("[CTEST][SET-PARAM] " + "SubscriptionConnectionPoolSize"); //CTEST
++        log.warn("[CTEST][SET-PARAM] " + "SubscriptionConnectionPoolSize" + getStackTrace()); //CTEST
          return (T) this;
      }
      public int getSubscriptionConnectionPoolSize() {
@@ -418,7 +418,7 @@ index b14e1b7f5..b649f7861 100644
       */
      public T setSlaveConnectionMinimumIdleSize(int slaveConnectionMinimumIdleSize) {
          this.slaveConnectionMinimumIdleSize = slaveConnectionMinimumIdleSize;
-+        log.warn("[CTEST][SET-PARAM] " + "SlaveConnectionMinimumIdleSize"); //CTEST
++        log.warn("[CTEST][SET-PARAM] " + "SlaveConnectionMinimumIdleSize" + getStackTrace()); //CTEST
          return (T) this;
      }
      public int getSlaveConnectionMinimumIdleSize() {
@@ -430,7 +430,7 @@ index b14e1b7f5..b649f7861 100644
       */
      public T setMasterConnectionMinimumIdleSize(int masterConnectionMinimumIdleSize) {
          this.masterConnectionMinimumIdleSize = masterConnectionMinimumIdleSize;
-+        log.warn("[CTEST][SET-PARAM] " + "MasterConnectionMinimumIdleSize"); //CTEST
++        log.warn("[CTEST][SET-PARAM] " + "MasterConnectionMinimumIdleSize" + getStackTrace()); //CTEST
          return (T) this;
      }
      public int getMasterConnectionMinimumIdleSize() {
@@ -442,7 +442,7 @@ index b14e1b7f5..b649f7861 100644
       */
      public T setSubscriptionConnectionMinimumIdleSize(int subscriptionConnectionMinimumIdleSize) {
          this.subscriptionConnectionMinimumIdleSize = subscriptionConnectionMinimumIdleSize;
-+        log.warn("[CTEST][SET-PARAM] " + "SubscriptionConnectionMinimumIdleSize"); //CTEST
++        log.warn("[CTEST][SET-PARAM] " + "SubscriptionConnectionMinimumIdleSize" + getStackTrace()); //CTEST
          return (T) this;
      }
      public int getSubscriptionConnectionMinimumIdleSize() {
@@ -454,7 +454,7 @@ index b14e1b7f5..b649f7861 100644
       */
      public T setReadMode(ReadMode readMode) {
          this.readMode = readMode;
-+        log.warn("[CTEST][SET-PARAM] " + "ReadMode"); //CTEST
++        log.warn("[CTEST][SET-PARAM] " + "ReadMode" + getStackTrace()); //CTEST
          return (T) this;
      }
      public ReadMode getReadMode() {
@@ -466,7 +466,7 @@ index b14e1b7f5..b649f7861 100644
       */
      public T setSubscriptionMode(SubscriptionMode subscriptionMode) {
          this.subscriptionMode = subscriptionMode;
-+        log.warn("[CTEST][SET-PARAM] " + "SubscriptionMode"); //CTEST
++        log.warn("[CTEST][SET-PARAM] " + "SubscriptionMode" + getStackTrace()); //CTEST
          return (T) this;
      }
      public SubscriptionMode getSubscriptionMode() {
@@ -474,18 +474,28 @@ index b14e1b7f5..b649f7861 100644
          return subscriptionMode;
      }
  
-@@ -309,9 +333,11 @@ public class BaseMasterSlaveServersConfig<T extends BaseMasterSlaveServersConfig
+@@ -309,10 +333,21 @@ public class BaseMasterSlaveServersConfig<T extends BaseMasterSlaveServersConfig
       */
      public T setDnsMonitoringInterval(long dnsMonitoringInterval) {
          this.dnsMonitoringInterval = dnsMonitoringInterval;
-+        log.warn("[CTEST][SET-PARAM] " + "DnsMonitoringInterval"); //CTEST
++        log.warn("[CTEST][SET-PARAM] " + "DnsMonitoringInterval" + getStackTrace()); //CTEST
          return (T) this;
      }
      public long getDnsMonitoringInterval() {
 +        log.warn("[CTEST][GET-PARAM] " + "DnsMonitoringInterval"); //CTEST
          return dnsMonitoringInterval;
      }
++    private static String getStackTrace() {
++        String stacktrace = " ";
++        for (StackTraceElement element : Thread.currentThread().getStackTrace()) {
++            stacktrace = stacktrace.concat(
++                    element.getClassName() + "#" + element.getMethodName() + "#" + element.getLineNumber() + "\t"
++            );
++        }
++        return stacktrace;
++    }
      
+ }
 diff --git a/redisson/src/main/java/org/redisson/config/ClusterServersConfig.java b/redisson/src/main/java/org/redisson/config/ClusterServersConfig.java
 index 9009ebc18..20052cad8 100644
 --- a/redisson/src/main/java/org/redisson/config/ClusterServersConfig.java
@@ -563,10 +573,10 @@ index 9009ebc18..20052cad8 100644
      }
      
 diff --git a/redisson/src/main/java/org/redisson/config/Config.java b/redisson/src/main/java/org/redisson/config/Config.java
-index 957bc6d67..115725dee 100644
+index 957bc6d67..4d4627cdc 100644
 --- a/redisson/src/main/java/org/redisson/config/Config.java
 +++ b/redisson/src/main/java/org/redisson/config/Config.java
-@@ -1,839 +1,889 @@
+@@ -1,839 +1,899 @@
 -/**
 - * Copyright (c) 2013-2022 Nikita Koksharov
 - *
@@ -2294,9 +2304,19 @@ index 957bc6d67..115725dee 100644
 +        log.warn("[CTEST][SET-PARAM] " + "ConnectionListener" + getStackTrace()); //CTEST
 +        return this;
 +    }
++
++    private static String getStackTrace() {
++        String stacktrace = " ";
++        for (StackTraceElement element : Thread.currentThread().getStackTrace()) {
++            stacktrace = stacktrace.concat(
++                    element.getClassName() + "#" + element.getMethodName() + "#" + element.getLineNumber() + "\t"
++            );
++        }
++        return stacktrace;
++    }
 +}
 diff --git a/redisson/src/main/java/org/redisson/config/MasterSlaveServersConfig.java b/redisson/src/main/java/org/redisson/config/MasterSlaveServersConfig.java
-index 99915f5fe..d10d2e0dd 100644
+index 99915f5fe..e74954b42 100644
 --- a/redisson/src/main/java/org/redisson/config/MasterSlaveServersConfig.java
 +++ b/redisson/src/main/java/org/redisson/config/MasterSlaveServersConfig.java
 @@ -14,6 +14,8 @@
@@ -2321,7 +2341,7 @@ index 99915f5fe..d10d2e0dd 100644
       */
      public MasterSlaveServersConfig setMasterAddress(String masterAddress) {
          this.masterAddress = masterAddress;
-+        log.warn("[CTEST][SET-PARAM] " + "MasterAddress"); //CTEST
++        log.warn("[CTEST][SET-PARAM] " + "MasterAddress" + getStackTrace()); //CTEST
          return this;
      }
      public String getMasterAddress() {
@@ -2337,22 +2357,32 @@ index 99915f5fe..d10d2e0dd 100644
          return slaveAddresses;
      }
      public void setSlaveAddresses(Set<String> readAddresses) {
-+        log.warn("[CTEST][SET-PARAM] " + "SlaveAddresses"); //CTEST
++        log.warn("[CTEST][SET-PARAM] " + "SlaveAddresses" + getStackTrace()); //CTEST
          this.slaveAddresses = readAddresses;
      }
  
-@@ -96,9 +102,11 @@ public class MasterSlaveServersConfig extends BaseMasterSlaveServersConfig<Maste
+@@ -96,10 +102,21 @@ public class MasterSlaveServersConfig extends BaseMasterSlaveServersConfig<Maste
       */
      public MasterSlaveServersConfig setDatabase(int database) {
          this.database = database;
-+        log.warn("[CTEST][SET-PARAM] " + "Database"); //CTEST
++        log.warn("[CTEST][SET-PARAM] " + "Database" + getStackTrace()); //CTEST
          return this;
      }
      public int getDatabase() {
 +        log.warn("[CTEST][GET-PARAM] " + "Database"); //CTEST
          return database;
      }
++    private static String getStackTrace() {
++        String stacktrace = " ";
++        for (StackTraceElement element : Thread.currentThread().getStackTrace()) {
++            stacktrace = stacktrace.concat(
++                    element.getClassName() + "#" + element.getMethodName() + "#" + element.getLineNumber() + "\t"
++            );
++        }
++        return stacktrace;
++    }
  
+ }
 diff --git a/redisson/src/main/java/org/redisson/config/RedissonNodeFileConfig.java b/redisson/src/main/java/org/redisson/config/RedissonNodeFileConfig.java
 index bbe665391..d0d42859d 100644
 --- a/redisson/src/main/java/org/redisson/config/RedissonNodeFileConfig.java
