@@ -113,6 +113,7 @@ class Runner:
                 line = line[line.find("[CTEST][SET-PARAM]"):]
                 assert line.startswith("[CTEST][SET-PARAM] "), "wrong line: " + line
                 comp = line.split(" ")
+                print(comp[1])
                 assert len(comp) == 3, "more than two whitespaces in " + line
                 assert comp[0] == "[CTEST][SET-PARAM]"
                 param_name = comp[1]
@@ -172,7 +173,7 @@ class Runner:
             if self.module == "alluxio-core":
                 cmd = ["mvn", "surefire:test", "-Dtest=" + method, "-DfailIfNoTests=false"]
             elif self.module == "redisson":
-                cmd = ["mvn", "surefire:test", "-Dtest=" + method, "-DredisBinary=/usr/bin/redis-server"]
+                cmd = ["mvn", "test", "-Dtest=" + method, "-DredisBinary=/usr/bin/redis-server", "-Dmaven.test.skip=false"]
             else:
                 cmd = ["mvn", "surefire:test", "-Dtest=" + method]
             print ("mvn surefire:test -Dtest="+method)
@@ -226,6 +227,7 @@ if __name__ == "__main__":
                   help="Be aggressive when looking for setters and ignore stacktrace.")
     (options, args) = parser.parse_args()
     module = args[0]
+    print(module)
     aggr = options.aggressive
     runner = Runner(module, aggr)
     runner.run_individual_testmethod()
