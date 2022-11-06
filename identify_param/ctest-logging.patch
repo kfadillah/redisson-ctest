@@ -43,14 +43,14 @@ index fbf5af41a..2abd159ac 100644
                          <reuseForks>true</reuseForks>
                          <argLine>
 diff --git a/redisson/src/main/java/org/redisson/config/BaseConfig.java b/redisson/src/main/java/org/redisson/config/BaseConfig.java
-index 79ee412ba..1d1784abd 100644
+index 79ee412ba..70c5ba0bc 100644
 --- a/redisson/src/main/java/org/redisson/config/BaseConfig.java
 +++ b/redisson/src/main/java/org/redisson/config/BaseConfig.java
 @@ -134,10 +134,12 @@ public class BaseConfig<T extends BaseConfig<T>> {
       */
      public T setSubscriptionsPerConnection(int subscriptionsPerConnection) {
          this.subscriptionsPerConnection = subscriptionsPerConnection;
-+        log.warn("[CTEST][SET-PARAM] " + "SubscriptionsPerConnection"); //CTEST
++        log.warn("[CTEST][SET-PARAM] " + "SubscriptionsPerConnection" + getStackTrace()); //CTEST
          return (T) this;
      }
  
@@ -63,7 +63,7 @@ index 79ee412ba..1d1784abd 100644
       */
      public T setPassword(String password) {
          this.password = password;
-+        log.warn("[CTEST][SET-PARAM] " + "Password"); //CTEST
++        log.warn("[CTEST][SET-PARAM] " + "Password" + getStackTrace()); //CTEST
          return (T) this;
      }
  
@@ -76,7 +76,7 @@ index 79ee412ba..1d1784abd 100644
       */
      public T setUsername(String username) {
          this.username = username;
-+        log.warn("[CTEST][SET-PARAM] " + "Username"); //CTEST
++        log.warn("[CTEST][SET-PARAM] " + "Username" + getStackTrace()); //CTEST
          return (T) this;
      }
  
@@ -89,7 +89,7 @@ index 79ee412ba..1d1784abd 100644
       * @return config
       */
      public T setRetryAttempts(int retryAttempts) {
-+        log.warn("[CTEST][SET-PARAM] " + "RetryAttempts"); //CTEST
++        log.warn("[CTEST][SET-PARAM] " + "RetryAttempts" + getStackTrace()); //CTEST
          this.retryAttempts = retryAttempts;
          return (T) this;
      }
@@ -103,7 +103,7 @@ index 79ee412ba..1d1784abd 100644
       */
      public T setRetryInterval(int retryInterval) {
          this.retryInterval = retryInterval;
-+        log.warn("[CTEST][SET-PARAM] " + "RetryInterval"); //CTEST
++        log.warn("[CTEST][SET-PARAM] " + "RetryInterval" + getStackTrace()); //CTEST
          return (T) this;
      }
  
@@ -116,7 +116,7 @@ index 79ee412ba..1d1784abd 100644
       * @return config
       */
      public T setTimeout(int timeout) {
-+        log.warn("[CTEST][SET-PARAM] " + "Timeout"); //CTEST
++        log.warn("[CTEST][SET-PARAM] " + "Timeout" + getStackTrace()); //CTEST
          this.timeout = timeout;
          return (T) this;
      }
@@ -130,7 +130,7 @@ index 79ee412ba..1d1784abd 100644
       */
      public T setClientName(String clientName) {
          this.clientName = clientName;
-+        log.warn("[CTEST][SET-PARAM] " + "ClientName"); //CTEST
++        log.warn("[CTEST][SET-PARAM] " + "ClientName" + getStackTrace()); //CTEST
          return (T) this;
      }
  
@@ -143,7 +143,7 @@ index 79ee412ba..1d1784abd 100644
       */
      public T setConnectTimeout(int connectTimeout) {
          this.connectTimeout = connectTimeout;
-+        log.warn("[CTEST][SET-PARAM] " + "ConnectTimeout"); //CTEST
++        log.warn("[CTEST][SET-PARAM] " + "ConnectTimeout" + getStackTrace()); //CTEST
          return (T) this;
      }
  
@@ -156,7 +156,7 @@ index 79ee412ba..1d1784abd 100644
       */
      public T setIdleConnectionTimeout(int idleConnectionTimeout) {
          this.idleConnectionTimeout = idleConnectionTimeout;
-+        log.warn("[CTEST][SET-PARAM] " + "IdleConnectionTimeout"); //CTEST
++        log.warn("[CTEST][SET-PARAM] " + "IdleConnectionTimeout" + getStackTrace()); //CTEST
          return (T) this;
      }
  
@@ -174,7 +174,7 @@ index 79ee412ba..1d1784abd 100644
       */
      public T setSslEnableEndpointIdentification(boolean sslEnableEndpointIdentification) {
          this.sslEnableEndpointIdentification = sslEnableEndpointIdentification;
-+        log.warn("[CTEST][SET-PARAM] " + "SslEnableEndpointIdentification"); //CTEST
++        log.warn("[CTEST][SET-PARAM] " + "SslEnableEndpointIdentification" + getStackTrace()); //CTEST
          return (T) this;
      }
  
@@ -187,7 +187,7 @@ index 79ee412ba..1d1784abd 100644
       */
      public T setSslProvider(SslProvider sslProvider) {
          this.sslProvider = sslProvider;
-+        log.warn("[CTEST][SET-PARAM] " + "SslProvider"); //CTEST
++        log.warn("[CTEST][SET-PARAM] " + "SslProvider" + getStackTrace()); //CTEST
          return (T) this;
      }
  
@@ -200,7 +200,7 @@ index 79ee412ba..1d1784abd 100644
       */
      public T setSslTruststore(URL sslTruststore) {
          this.sslTruststore = sslTruststore;
-+        log.warn("[CTEST][SET-PARAM] " + "SslTruststore"); //CTEST
++        log.warn("[CTEST][SET-PARAM] " + "SslTruststore" + getStackTrace()); //CTEST
          return (T) this;
      }
  
@@ -213,7 +213,7 @@ index 79ee412ba..1d1784abd 100644
       */
      public T setSslTruststorePassword(String sslTruststorePassword) {
          this.sslTruststorePassword = sslTruststorePassword;
-+        log.warn("[CTEST][SET-PARAM] " + "SslTruststorePassword"); //CTEST
++        log.warn("[CTEST][SET-PARAM] " + "SslTruststorePassword" + getStackTrace()); //CTEST
          return (T) this;
      }
  
@@ -226,7 +226,7 @@ index 79ee412ba..1d1784abd 100644
       */
      public T setSslKeystore(URL sslKeystore) {
          this.sslKeystore = sslKeystore;
-+        log.warn("[CTEST][SET-PARAM] " + "SslKeystore"); //CTEST
++        log.warn("[CTEST][SET-PARAM] " + "SslKeystore" + getStackTrace()); //CTEST
          return (T) this;
      }
  
@@ -239,7 +239,7 @@ index 79ee412ba..1d1784abd 100644
       */
      public T setSslKeystorePassword(String sslKeystorePassword) {
          this.sslKeystorePassword = sslKeystorePassword;
-+        log.warn("[CTEST][SET-PARAM] " + "SslKeystorePassword"); //CTEST
++        log.warn("[CTEST][SET-PARAM] " + "SslKeystorePassword" + getStackTrace()); //CTEST
          return (T) this;
      }
  
@@ -252,7 +252,7 @@ index 79ee412ba..1d1784abd 100644
       */
      public T setSslProtocols(String[] sslProtocols) {
          this.sslProtocols = sslProtocols;
-+        log.warn("[CTEST][SET-PARAM] " + "SslProtocols"); //CTEST
++        log.warn("[CTEST][SET-PARAM] " + "SslProtocols" + getStackTrace()); //CTEST
          return (T) this;
      }
  
@@ -265,7 +265,7 @@ index 79ee412ba..1d1784abd 100644
       */
      public T setPingConnectionInterval(int pingConnectionInterval) {
          this.pingConnectionInterval = pingConnectionInterval;
-+        log.warn("[CTEST][SET-PARAM] " + "PingConnectionInterval"); //CTEST
++        log.warn("[CTEST][SET-PARAM] " + "PingConnectionInterval" + getStackTrace()); //CTEST
          return (T) this;
      }
  
@@ -278,7 +278,7 @@ index 79ee412ba..1d1784abd 100644
       */
      public T setKeepAlive(boolean keepAlive) {
          this.keepAlive = keepAlive;
-+        log.warn("[CTEST][SET-PARAM] " + "KeepAlive"); //CTEST
++        log.warn("[CTEST][SET-PARAM] " + "KeepAlive" + getStackTrace()); //CTEST
          return (T) this;
      }
  
@@ -291,7 +291,7 @@ index 79ee412ba..1d1784abd 100644
       */
      public T setTcpNoDelay(boolean tcpNoDelay) {
          this.tcpNoDelay = tcpNoDelay;
-+        log.warn("[CTEST][SET-PARAM] " + "TcpNoDelay"); //CTEST
++        log.warn("[CTEST][SET-PARAM] " + "TcpNoDelay" + getStackTrace()); //CTEST
          return (T) this;
      }
  
@@ -305,7 +305,7 @@ index 79ee412ba..1d1784abd 100644
       */
      public T setNameMapper(NameMapper nameMapper) {
          this.nameMapper = nameMapper;
-+        log.warn("[CTEST][SET-PARAM] " + "NameMapper"); //CTEST
++        log.warn("[CTEST][SET-PARAM] " + "NameMapper" + getStackTrace()); //CTEST
          return (T) this;
      }
 +
@@ -1230,7 +1230,7 @@ index af48ab03a..1c3fc6f01 100644
      }
  }
 diff --git a/redisson/src/main/java/org/redisson/config/SingleServerConfig.java b/redisson/src/main/java/org/redisson/config/SingleServerConfig.java
-index 54279749d..e77470c52 100644
+index 54279749d..483cf1960 100644
 --- a/redisson/src/main/java/org/redisson/config/SingleServerConfig.java
 +++ b/redisson/src/main/java/org/redisson/config/SingleServerConfig.java
 @@ -14,7 +14,8 @@
@@ -1255,7 +1255,7 @@ index 54279749d..e77470c52 100644
       */
      public SingleServerConfig setConnectionPoolSize(int connectionPoolSize) {
          this.connectionPoolSize = connectionPoolSize;
-+        log.warn("[CTEST][SET-PARAM] " + "ConnectionPoolSize"); //CTEST
++        log.warn("[CTEST][SET-PARAM] " + "ConnectionPoolSize" + getStackTrace()); //CTEST
          return this;
      }
      public int getConnectionPoolSize() {
@@ -1267,11 +1267,11 @@ index 54279749d..e77470c52 100644
       */
      public SingleServerConfig setSubscriptionConnectionPoolSize(int subscriptionConnectionPoolSize) {
          this.subscriptionConnectionPoolSize = subscriptionConnectionPoolSize;
-+        log.warn("[CTEST][SET-PARAM] " + "setSubscriptionConnectionPoolSize"); //CTEST
++        log.warn("[CTEST][SET-PARAM] " + "SubscriptionConnectionPoolSize" + getStackTrace()); //CTEST
          return this;
      }
      public int getSubscriptionConnectionPoolSize() {
-+        log.warn("[CTEST][GET-PARAM] " + "setSubscriptionConnectionPoolSize"); //CTEST
++        log.warn("[CTEST][GET-PARAM] " + "SubscriptionConnectionPoolSize"); //CTEST
          return subscriptionConnectionPoolSize;
      }
  
@@ -1292,11 +1292,11 @@ index 54279749d..e77470c52 100644
       */
      public SingleServerConfig setDnsMonitoringInterval(long dnsMonitoringInterval) {
          this.dnsMonitoringInterval = dnsMonitoringInterval;
-+        log.warn("[CTEST][SET-PARAM] " + "DnsMonitoringInterval"); //CTEST
++        log.warn("[CTEST][SET-PARAM] " + "DnsMonitoringInterval" + getStackTrace()); //CTEST
          return this;
      }
      public long getDnsMonitoringInterval() {
-+        log.warn("[CTEST][GET-PARAM] " + "seDnsMonitoringInterval"); //CTEST
++        log.warn("[CTEST][GET-PARAM] " + "DnsMonitoringInterval"); //CTEST
          return dnsMonitoringInterval;
      }
  
@@ -1304,7 +1304,7 @@ index 54279749d..e77470c52 100644
       */
      public SingleServerConfig setSubscriptionConnectionMinimumIdleSize(int subscriptionConnectionMinimumIdleSize) {
          this.subscriptionConnectionMinimumIdleSize = subscriptionConnectionMinimumIdleSize;
-+        log.warn("[CTEST][SET-PARAM] " + "SubscriptionConnectionMinimumIdleSize"); //CTEST
++        log.warn("[CTEST][SET-PARAM] " + "SubscriptionConnectionMinimumIdleSize" + getStackTrace()); //CTEST
          return this;
      }
      public int getSubscriptionConnectionMinimumIdleSize() {
@@ -1316,7 +1316,7 @@ index 54279749d..e77470c52 100644
       */
      public SingleServerConfig setConnectionMinimumIdleSize(int connectionMinimumIdleSize) {
          this.connectionMinimumIdleSize = connectionMinimumIdleSize;
-+        log.warn("[CTEST][SET-PARAM] " + "ConnectionMinimumIdleSize"); //CTEST
++        log.warn("[CTEST][SET-PARAM] " + "ConnectionMinimumIdleSize" + getStackTrace()); //CTEST
          return this;
      }
      public int getConnectionMinimumIdleSize() {
@@ -1328,7 +1328,7 @@ index 54279749d..e77470c52 100644
       */
      public SingleServerConfig setDatabase(int database) {
          this.database = database;
-+        log.warn("[CTEST][SET-PARAM] " + "Database"); //CTEST
++        log.warn("[CTEST][SET-PARAM] " + "Database" + getStackTrace()); //CTEST
          return this;
      }
      public int getDatabase() {
