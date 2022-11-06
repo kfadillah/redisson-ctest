@@ -99,24 +99,30 @@ class Runner:
             if "[CTEST][GET-PARAM]" in line:
                 line = line[line.find("[CTEST][GET-PARAM]"):]
                 assert line.startswith("[CTEST][GET-PARAM] "), "wrong line: " + line
-                assert line.split(" ")[0] == "[CTEST][GET-PARAM]"
-                assert line.count(" ") == 1, "more than one whitespace in " + line
-                param_name = line.split(" ")[1]
+                comp = line.split(" ")
+                assert comp[0] == "[CTEST][GET-PARAM]"
+                assert len(comp) == 2, "more than one whitespace in " + line
+                param_name = comp[1]
                 if param_name in self.params:
-                    is_getter = True 
-                    self.getter_record.write(method + " " + param_name + "\n")
-                    self.getter_record.flush()
+                    full_name = method + " " + param_name + "\n"
+                    if full_name not in getter:
+                        self.getter_record.write(full_name)
+                        self.getter_record.flush()
+                        getter.add(full_name)
             elif "[CTEST][SET-PARAM]" in line:
                 line = line[line.find("[CTEST][SET-PARAM]"):]
                 assert line.startswith("[CTEST][SET-PARAM] "), "wrong line: " + line
-                assert line.split(" ")[0] == "[CTEST][SET-PARAM]"
-                assert line.count(" ") == 2, "more than one whitespace in " + line
-                param_name = line.split(" ")[1]
+                comp = line.split(" ")
+                assert len(comp) == 3, "more than two whitespaces in " + line
+                assert comp[0] == "[CTEST][SET-PARAM]"
+                param_name = comp[1]
                 if param_name in self.params:
-                    if self.aggressive or self.setInTest(line.split(" ")[2]):
-                        is_setter = True
-                        self.setter_record.write(method + " " + param_name + "\n")
-                        self.setter_record.flush()
+                    if self.aggressive or self.setInTest(comp[2]):
+                        full_name = method + " " + param_name + "\n"
+                        if full_name not in setter:
+                            self.setter_record.write(full_name)
+                            self.setter_record.flush()
+                            setter.add(full_name)
 
         if is_getter or is_setter:
             if is_getter:
