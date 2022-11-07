@@ -43,19 +43,19 @@ index fbf5af41a..2abd159ac 100644
                          <reuseForks>true</reuseForks>
                          <argLine>
 diff --git a/redisson/src/main/java/org/redisson/config/BaseConfig.java b/redisson/src/main/java/org/redisson/config/BaseConfig.java
-index 79ee412ba..70c5ba0bc 100644
+index 79ee412ba..948eb3e70 100644
 --- a/redisson/src/main/java/org/redisson/config/BaseConfig.java
 +++ b/redisson/src/main/java/org/redisson/config/BaseConfig.java
 @@ -134,10 +134,12 @@ public class BaseConfig<T extends BaseConfig<T>> {
       */
      public T setSubscriptionsPerConnection(int subscriptionsPerConnection) {
          this.subscriptionsPerConnection = subscriptionsPerConnection;
-+        log.warn("[CTEST][SET-PARAM] " + "SubscriptionsPerConnection" + getStackTrace()); //CTEST
++        log.warn("[CTEST][SET-PARAM] " + "subscriptionsPerConnection" + getStackTrace()); //CTEST
          return (T) this;
      }
  
      public int getSubscriptionsPerConnection() {
-+        log.warn("[CTEST][GET-PARAM] " + "SubscriptionsPerConnection"); //CTEST
++        log.warn("[CTEST][GET-PARAM] " + "subscriptionsPerConnection"); //CTEST
          return subscriptionsPerConnection;
      }
  
@@ -63,12 +63,12 @@ index 79ee412ba..70c5ba0bc 100644
       */
      public T setPassword(String password) {
          this.password = password;
-+        log.warn("[CTEST][SET-PARAM] " + "Password" + getStackTrace()); //CTEST
++        log.warn("[CTEST][SET-PARAM] " + "password" + getStackTrace()); //CTEST
          return (T) this;
      }
  
      public String getPassword() {
-+        log.warn("[CTEST][GET-PARAM] " + "Password"); //CTEST
++        log.warn("[CTEST][GET-PARAM] " + "password"); //CTEST
          return password;
      }
  
@@ -76,12 +76,12 @@ index 79ee412ba..70c5ba0bc 100644
       */
      public T setUsername(String username) {
          this.username = username;
-+        log.warn("[CTEST][SET-PARAM] " + "Username" + getStackTrace()); //CTEST
++        log.warn("[CTEST][SET-PARAM] " + "username" + getStackTrace()); //CTEST
          return (T) this;
      }
  
      public String getUsername() {
-+        log.warn("[CTEST][GET-PARAM] " + "Username"); //CTEST
++        log.warn("[CTEST][GET-PARAM] " + "username"); //CTEST
          return username;
      }
  
@@ -89,13 +89,13 @@ index 79ee412ba..70c5ba0bc 100644
       * @return config
       */
      public T setRetryAttempts(int retryAttempts) {
-+        log.warn("[CTEST][SET-PARAM] " + "RetryAttempts" + getStackTrace()); //CTEST
++        log.warn("[CTEST][SET-PARAM] " + "retryAttempts" + getStackTrace()); //CTEST
          this.retryAttempts = retryAttempts;
          return (T) this;
      }
  
      public int getRetryAttempts() {
-+        log.warn("[CTEST][GET-PARAM] " + "RetryAttempts"); //CTEST
++        log.warn("[CTEST][GET-PARAM] " + "retryAttempts"); //CTEST
          return retryAttempts;
      }
  
@@ -103,12 +103,12 @@ index 79ee412ba..70c5ba0bc 100644
       */
      public T setRetryInterval(int retryInterval) {
          this.retryInterval = retryInterval;
-+        log.warn("[CTEST][SET-PARAM] " + "RetryInterval" + getStackTrace()); //CTEST
++        log.warn("[CTEST][SET-PARAM] " + "retryInterval" + getStackTrace()); //CTEST
          return (T) this;
      }
  
      public int getRetryInterval() {
-+        log.warn("[CTEST][GET-PARAM] " + "RetryInterval"); //CTEST
++        log.warn("[CTEST][GET-PARAM] " + "retryInterval"); //CTEST
          return retryInterval;
      }
  
@@ -116,13 +116,13 @@ index 79ee412ba..70c5ba0bc 100644
       * @return config
       */
      public T setTimeout(int timeout) {
-+        log.warn("[CTEST][SET-PARAM] " + "Timeout" + getStackTrace()); //CTEST
++        log.warn("[CTEST][SET-PARAM] " + "timeout" + getStackTrace()); //CTEST
          this.timeout = timeout;
          return (T) this;
      }
  
      public int getTimeout() {
-+        log.warn("[CTEST][GET-PARAM] " + "Timeout"); //CTEST
++        log.warn("[CTEST][GET-PARAM] " + "timeout"); //CTEST
          return timeout;
      }
  
@@ -130,12 +130,12 @@ index 79ee412ba..70c5ba0bc 100644
       */
      public T setClientName(String clientName) {
          this.clientName = clientName;
-+        log.warn("[CTEST][SET-PARAM] " + "ClientName" + getStackTrace()); //CTEST
++        log.warn("[CTEST][SET-PARAM] " + "clientName" + getStackTrace()); //CTEST
          return (T) this;
      }
  
      public String getClientName() {
-+        log.warn("[CTEST][GET-PARAM] " + "ClientName"); //CTEST
++        log.warn("[CTEST][GET-PARAM] " + "clientName"); //CTEST
          return clientName;
      }
  
@@ -143,12 +143,12 @@ index 79ee412ba..70c5ba0bc 100644
       */
      public T setConnectTimeout(int connectTimeout) {
          this.connectTimeout = connectTimeout;
-+        log.warn("[CTEST][SET-PARAM] " + "ConnectTimeout" + getStackTrace()); //CTEST
++        log.warn("[CTEST][SET-PARAM] " + "connectTimeout" + getStackTrace()); //CTEST
          return (T) this;
      }
  
      public int getConnectTimeout() {
-+        log.warn("[CTEST][GET-PARAM] " + "ConnectTimeout"); //CTEST
++        log.warn("[CTEST][GET-PARAM] " + "connectTimeout"); //CTEST
          return connectTimeout;
      }
  
@@ -156,17 +156,17 @@ index 79ee412ba..70c5ba0bc 100644
       */
      public T setIdleConnectionTimeout(int idleConnectionTimeout) {
          this.idleConnectionTimeout = idleConnectionTimeout;
-+        log.warn("[CTEST][SET-PARAM] " + "IdleConnectionTimeout" + getStackTrace()); //CTEST
++        log.warn("[CTEST][SET-PARAM] " + "idleConnectionTimeout" + getStackTrace()); //CTEST
          return (T) this;
      }
  
      public int getIdleConnectionTimeout() {
-+        log.warn("[CTEST][GET-PARAM] " + "IdleConnectionTimeout"); //CTEST
++        log.warn("[CTEST][GET-PARAM] " + "idleConnectionTimeout"); //CTEST
          return idleConnectionTimeout;
      }
  
      public boolean isSslEnableEndpointIdentification() {
-+        log.warn("[CTEST][GET-PARAM] " + "SslEnableEndpointIdentification"); //CTEST
++        log.warn("[CTEST][GET-PARAM] " + "sslEnableEndpointIdentification"); //CTEST
          return sslEnableEndpointIdentification;
      }
  
@@ -174,12 +174,12 @@ index 79ee412ba..70c5ba0bc 100644
       */
      public T setSslEnableEndpointIdentification(boolean sslEnableEndpointIdentification) {
          this.sslEnableEndpointIdentification = sslEnableEndpointIdentification;
-+        log.warn("[CTEST][SET-PARAM] " + "SslEnableEndpointIdentification" + getStackTrace()); //CTEST
++        log.warn("[CTEST][SET-PARAM] " + "sslEnableEndpointIdentification" + getStackTrace()); //CTEST
          return (T) this;
      }
  
      public SslProvider getSslProvider() {
-+        log.warn("[CTEST][GET-PARAM] " + "SslProvider"); //CTEST
++        log.warn("[CTEST][GET-PARAM] " + "sslProvider"); //CTEST
          return sslProvider;
      }
  
@@ -187,12 +187,12 @@ index 79ee412ba..70c5ba0bc 100644
       */
      public T setSslProvider(SslProvider sslProvider) {
          this.sslProvider = sslProvider;
-+        log.warn("[CTEST][SET-PARAM] " + "SslProvider" + getStackTrace()); //CTEST
++        log.warn("[CTEST][SET-PARAM] " + "sslProvider" + getStackTrace()); //CTEST
          return (T) this;
      }
  
      public URL getSslTruststore() {
-+        log.warn("[CTEST][GET-PARAM] " + "SslTruststore"); //CTEST
++        log.warn("[CTEST][GET-PARAM] " + "sslTruststore"); //CTEST
          return sslTruststore;
      }
  
@@ -200,12 +200,12 @@ index 79ee412ba..70c5ba0bc 100644
       */
      public T setSslTruststore(URL sslTruststore) {
          this.sslTruststore = sslTruststore;
-+        log.warn("[CTEST][SET-PARAM] " + "SslTruststore" + getStackTrace()); //CTEST
++        log.warn("[CTEST][SET-PARAM] " + "sslTruststore" + getStackTrace()); //CTEST
          return (T) this;
      }
  
      public String getSslTruststorePassword() {
-+        log.warn("[CTEST][GET-PARAM] " + "SslTruststorePassword"); //CTEST
++        log.warn("[CTEST][GET-PARAM] " + "sslTruststorePassword"); //CTEST
          return sslTruststorePassword;
      }
  
@@ -213,12 +213,12 @@ index 79ee412ba..70c5ba0bc 100644
       */
      public T setSslTruststorePassword(String sslTruststorePassword) {
          this.sslTruststorePassword = sslTruststorePassword;
-+        log.warn("[CTEST][SET-PARAM] " + "SslTruststorePassword" + getStackTrace()); //CTEST
++        log.warn("[CTEST][SET-PARAM] " + "sslTruststorePassword" + getStackTrace()); //CTEST
          return (T) this;
      }
  
      public URL getSslKeystore() {
-+        log.warn("[CTEST][GET-PARAM] " + "SslKeystore"); //CTEST
++        log.warn("[CTEST][GET-PARAM] " + "sslKeystore"); //CTEST
          return sslKeystore;
      }
  
@@ -226,12 +226,12 @@ index 79ee412ba..70c5ba0bc 100644
       */
      public T setSslKeystore(URL sslKeystore) {
          this.sslKeystore = sslKeystore;
-+        log.warn("[CTEST][SET-PARAM] " + "SslKeystore" + getStackTrace()); //CTEST
++        log.warn("[CTEST][SET-PARAM] " + "sslKeystore" + getStackTrace()); //CTEST
          return (T) this;
      }
  
      public String getSslKeystorePassword() {
-+        log.warn("[CTEST][GET-PARAM] " + "SslKeystorePassword"); //CTEST
++        log.warn("[CTEST][GET-PARAM] " + "sslKeystorePassword"); //CTEST
          return sslKeystorePassword;
      }
  
@@ -239,12 +239,12 @@ index 79ee412ba..70c5ba0bc 100644
       */
      public T setSslKeystorePassword(String sslKeystorePassword) {
          this.sslKeystorePassword = sslKeystorePassword;
-+        log.warn("[CTEST][SET-PARAM] " + "SslKeystorePassword" + getStackTrace()); //CTEST
++        log.warn("[CTEST][SET-PARAM] " + "sslKeystorePassword" + getStackTrace()); //CTEST
          return (T) this;
      }
  
      public String[] getSslProtocols() {
-+        log.warn("[CTEST][GET-PARAM] " + "SslProtocols"); //CTEST
++        log.warn("[CTEST][GET-PARAM] " + "sslProtocols"); //CTEST
          return sslProtocols;
      }
  
@@ -252,12 +252,12 @@ index 79ee412ba..70c5ba0bc 100644
       */
      public T setSslProtocols(String[] sslProtocols) {
          this.sslProtocols = sslProtocols;
-+        log.warn("[CTEST][SET-PARAM] " + "SslProtocols" + getStackTrace()); //CTEST
++        log.warn("[CTEST][SET-PARAM] " + "sslProtocols" + getStackTrace()); //CTEST
          return (T) this;
      }
  
      public int getPingConnectionInterval() {
-+        log.warn("[CTEST][GET-PARAM] " + "PingConnectionInterval"); //CTEST
++        log.warn("[CTEST][GET-PARAM] " + "pingConnectionInterval"); //CTEST
          return pingConnectionInterval;
      }
  
@@ -265,12 +265,12 @@ index 79ee412ba..70c5ba0bc 100644
       */
      public T setPingConnectionInterval(int pingConnectionInterval) {
          this.pingConnectionInterval = pingConnectionInterval;
-+        log.warn("[CTEST][SET-PARAM] " + "PingConnectionInterval" + getStackTrace()); //CTEST
++        log.warn("[CTEST][SET-PARAM] " + "pingConnectionInterval" + getStackTrace()); //CTEST
          return (T) this;
      }
  
      public boolean isKeepAlive() {
-+        log.warn("[CTEST][GET-PARAM] " + "KeepAlive"); //CTEST
++        log.warn("[CTEST][GET-PARAM] " + "keepAlive"); //CTEST
          return keepAlive;
      }
  
@@ -278,12 +278,12 @@ index 79ee412ba..70c5ba0bc 100644
       */
      public T setKeepAlive(boolean keepAlive) {
          this.keepAlive = keepAlive;
-+        log.warn("[CTEST][SET-PARAM] " + "KeepAlive" + getStackTrace()); //CTEST
++        log.warn("[CTEST][SET-PARAM] " + "keepAlive" + getStackTrace()); //CTEST
          return (T) this;
      }
  
      public boolean isTcpNoDelay() {
-+        log.warn("[CTEST][GET-PARAM] " + "TcpNoDelay"); //CTEST
++        log.warn("[CTEST][GET-PARAM] " + "tcpNoDelay"); //CTEST
          return tcpNoDelay;
      }
  
@@ -291,13 +291,13 @@ index 79ee412ba..70c5ba0bc 100644
       */
      public T setTcpNoDelay(boolean tcpNoDelay) {
          this.tcpNoDelay = tcpNoDelay;
-+        log.warn("[CTEST][SET-PARAM] " + "TcpNoDelay" + getStackTrace()); //CTEST
++        log.warn("[CTEST][SET-PARAM] " + "tcpNoDelay" + getStackTrace()); //CTEST
          return (T) this;
      }
  
  
      public NameMapper getNameMapper() {
-+        log.warn("[CTEST][GET-PARAM] " + "NameMapper"); //CTEST
++        log.warn("[CTEST][GET-PARAM] " + "nameMapper"); //CTEST
          return nameMapper;
      }
  
@@ -305,7 +305,7 @@ index 79ee412ba..70c5ba0bc 100644
       */
      public T setNameMapper(NameMapper nameMapper) {
          this.nameMapper = nameMapper;
-+        log.warn("[CTEST][SET-PARAM] " + "NameMapper" + getStackTrace()); //CTEST
++        log.warn("[CTEST][SET-PARAM] " + "nameMapper" + getStackTrace()); //CTEST
          return (T) this;
      }
 +
@@ -320,7 +320,7 @@ index 79ee412ba..70c5ba0bc 100644
 +    }
  }
 diff --git a/redisson/src/main/java/org/redisson/config/BaseMasterSlaveServersConfig.java b/redisson/src/main/java/org/redisson/config/BaseMasterSlaveServersConfig.java
-index b14e1b7f5..7cae51944 100644
+index b14e1b7f5..21b95b72a 100644
 --- a/redisson/src/main/java/org/redisson/config/BaseMasterSlaveServersConfig.java
 +++ b/redisson/src/main/java/org/redisson/config/BaseMasterSlaveServersConfig.java
 @@ -17,6 +17,8 @@ package org.redisson.config;
@@ -345,11 +345,11 @@ index b14e1b7f5..7cae51944 100644
       */
      public T setSlaveConnectionPoolSize(int slaveConnectionPoolSize) {
          this.slaveConnectionPoolSize = slaveConnectionPoolSize;
-+        log.warn("[CTEST][SET-PARAM] " + "SlaveConnectionPoolSize" + getStackTrace()); //CTEST
++        log.warn("[CTEST][SET-PARAM] " + "slaveConnectionPoolSize" + getStackTrace()); //CTEST
          return (T) this;
      }
      public int getSlaveConnectionPoolSize() {
-+        log.warn("[CTEST][GET-PARAM] " + "SlaveConnectionPoolSize"); //CTEST
++        log.warn("[CTEST][GET-PARAM] " + "slaveConnectionPoolSize"); //CTEST
          return slaveConnectionPoolSize;
      }
      
@@ -357,12 +357,12 @@ index b14e1b7f5..7cae51944 100644
  
      public T setFailedSlaveReconnectionInterval(int failedSlavesReconnectionTimeout) {
          this.failedSlaveReconnectionInterval = failedSlavesReconnectionTimeout;
-+        log.warn("[CTEST][SET-PARAM] " + "FailedSlaveReconnectionInterval" + getStackTrace()); //CTEST
++        log.warn("[CTEST][SET-PARAM] " + "failedSlaveReconnectionInterval" + getStackTrace()); //CTEST
          return (T) this;
      }
  
      public int getFailedSlaveReconnectionInterval() {
-+        log.warn("[CTEST][GET-PARAM] " + "FailedSlaveReconnectionInterval"); //CTEST
++        log.warn("[CTEST][GET-PARAM] " + "failedSlaveReconnectionInterval"); //CTEST
          return failedSlaveReconnectionInterval;
      }
  
@@ -370,11 +370,11 @@ index b14e1b7f5..7cae51944 100644
       */
      public T setFailedSlaveCheckInterval(int slaveFailsInterval) {
          this.failedSlaveCheckInterval = slaveFailsInterval;
-+        log.warn("[CTEST][SET-PARAM] " + "FailedSlaveCheckInterval" + getStackTrace()); //CTEST
++        log.warn("[CTEST][SET-PARAM] " + "failedSlaveCheckInterval" + getStackTrace()); //CTEST
          return (T) this;
      }
      public int getFailedSlaveCheckInterval() {
-+        log.warn("[CTEST][GET-PARAM] " + "FailedSlaveCheckInterval"); //CTEST
++        log.warn("[CTEST][GET-PARAM] " + "failedSlaveCheckInterval"); //CTEST
          return failedSlaveCheckInterval;
      }
  
@@ -382,11 +382,11 @@ index b14e1b7f5..7cae51944 100644
       */
      public T setMasterConnectionPoolSize(int masterConnectionPoolSize) {
          this.masterConnectionPoolSize = masterConnectionPoolSize;
-+        log.warn("[CTEST][SET-PARAM] " + "MasterConnectionPoolSize" + getStackTrace()); //CTEST
++        log.warn("[CTEST][SET-PARAM] " + "masterConnectionPoolSize" + getStackTrace()); //CTEST
          return (T) this;
      }
      public int getMasterConnectionPoolSize() {
-+        log.warn("[CTEST][GET-PARAM] " + "MasterConnectionPoolSize"); //CTEST
++        log.warn("[CTEST][GET-PARAM] " + "masterConnectionPoolSize"); //CTEST
          return masterConnectionPoolSize;
      }
  
@@ -394,11 +394,11 @@ index b14e1b7f5..7cae51944 100644
       */
      public T setLoadBalancer(LoadBalancer loadBalancer) {
          this.loadBalancer = loadBalancer;
-+        log.warn("[CTEST][SET-PARAM] " + "LoadBalancer" + getStackTrace()); //CTEST
++        log.warn("[CTEST][SET-PARAM] " + "loadBalancer" + getStackTrace()); //CTEST
          return (T) this;
      }
      public LoadBalancer getLoadBalancer() {
-+        log.warn("[CTEST][GET-PARAM] " + "LoadBalancer"); //CTEST
++        log.warn("[CTEST][GET-PARAM] " + "loadBalancer"); //CTEST
          return loadBalancer;
      }
  
@@ -406,11 +406,11 @@ index b14e1b7f5..7cae51944 100644
       */
      public T setSubscriptionConnectionPoolSize(int subscriptionConnectionPoolSize) {
          this.subscriptionConnectionPoolSize = subscriptionConnectionPoolSize;
-+        log.warn("[CTEST][SET-PARAM] " + "SubscriptionConnectionPoolSize" + getStackTrace()); //CTEST
++        log.warn("[CTEST][SET-PARAM] " + "subscriptionConnectionPoolSize" + getStackTrace()); //CTEST
          return (T) this;
      }
      public int getSubscriptionConnectionPoolSize() {
-+        log.warn("[CTEST][GET-PARAM] " + "SubscriptionConnectionPoolSize"); //CTEST
++        log.warn("[CTEST][GET-PARAM] " + "subscriptionConnectionPoolSize"); //CTEST
          return subscriptionConnectionPoolSize;
      }
  
@@ -418,11 +418,11 @@ index b14e1b7f5..7cae51944 100644
       */
      public T setSlaveConnectionMinimumIdleSize(int slaveConnectionMinimumIdleSize) {
          this.slaveConnectionMinimumIdleSize = slaveConnectionMinimumIdleSize;
-+        log.warn("[CTEST][SET-PARAM] " + "SlaveConnectionMinimumIdleSize" + getStackTrace()); //CTEST
++        log.warn("[CTEST][SET-PARAM] " + "slaveConnectionMinimumIdleSize" + getStackTrace()); //CTEST
          return (T) this;
      }
      public int getSlaveConnectionMinimumIdleSize() {
-+        log.warn("[CTEST][GET-PARAM] " + "SlaveConnectionMinimumIdleSize"); //CTEST
++        log.warn("[CTEST][GET-PARAM] " + "slaveConnectionMinimumIdleSize"); //CTEST
          return slaveConnectionMinimumIdleSize;
      }
  
@@ -430,11 +430,11 @@ index b14e1b7f5..7cae51944 100644
       */
      public T setMasterConnectionMinimumIdleSize(int masterConnectionMinimumIdleSize) {
          this.masterConnectionMinimumIdleSize = masterConnectionMinimumIdleSize;
-+        log.warn("[CTEST][SET-PARAM] " + "MasterConnectionMinimumIdleSize" + getStackTrace()); //CTEST
++        log.warn("[CTEST][SET-PARAM] " + "masterConnectionMinimumIdleSize" + getStackTrace()); //CTEST
          return (T) this;
      }
      public int getMasterConnectionMinimumIdleSize() {
-+        log.warn("[CTEST][GET-PARAM] " + "MasterConnectionMinimumIdleSize"); //CTEST
++        log.warn("[CTEST][GET-PARAM] " + "masterConnectionMinimumIdleSize"); //CTEST
          return masterConnectionMinimumIdleSize;
      }
  
@@ -442,11 +442,11 @@ index b14e1b7f5..7cae51944 100644
       */
      public T setSubscriptionConnectionMinimumIdleSize(int subscriptionConnectionMinimumIdleSize) {
          this.subscriptionConnectionMinimumIdleSize = subscriptionConnectionMinimumIdleSize;
-+        log.warn("[CTEST][SET-PARAM] " + "SubscriptionConnectionMinimumIdleSize" + getStackTrace()); //CTEST
++        log.warn("[CTEST][SET-PARAM] " + "subscriptionConnectionMinimumIdleSize" + getStackTrace()); //CTEST
          return (T) this;
      }
      public int getSubscriptionConnectionMinimumIdleSize() {
-+        log.warn("[CTEST][GET-PARAM] " + "SubscriptionConnectionMinimumIdleSize"); //CTEST
++        log.warn("[CTEST][GET-PARAM] " + "subscriptionConnectionMinimumIdleSize"); //CTEST
          return subscriptionConnectionMinimumIdleSize;
      }
  
@@ -454,11 +454,11 @@ index b14e1b7f5..7cae51944 100644
       */
      public T setReadMode(ReadMode readMode) {
          this.readMode = readMode;
-+        log.warn("[CTEST][SET-PARAM] " + "ReadMode" + getStackTrace()); //CTEST
++        log.warn("[CTEST][SET-PARAM] " + "readMode" + getStackTrace()); //CTEST
          return (T) this;
      }
      public ReadMode getReadMode() {
-+        log.warn("[CTEST][GET-PARAM] " + "ReadMode"); //CTEST
++        log.warn("[CTEST][GET-PARAM] " + "readMode"); //CTEST
          return readMode;
      }
      
@@ -466,11 +466,11 @@ index b14e1b7f5..7cae51944 100644
       */
      public T setSubscriptionMode(SubscriptionMode subscriptionMode) {
          this.subscriptionMode = subscriptionMode;
-+        log.warn("[CTEST][SET-PARAM] " + "SubscriptionMode" + getStackTrace()); //CTEST
++        log.warn("[CTEST][SET-PARAM] " + "subscriptionMode" + getStackTrace()); //CTEST
          return (T) this;
      }
      public SubscriptionMode getSubscriptionMode() {
-+        log.warn("[CTEST][GET-PARAM] " + "SubscriptionMode"); //CTEST
++        log.warn("[CTEST][GET-PARAM] " + "subscriptionMode"); //CTEST
          return subscriptionMode;
      }
  
@@ -478,11 +478,11 @@ index b14e1b7f5..7cae51944 100644
       */
      public T setDnsMonitoringInterval(long dnsMonitoringInterval) {
          this.dnsMonitoringInterval = dnsMonitoringInterval;
-+        log.warn("[CTEST][SET-PARAM] " + "DnsMonitoringInterval" + getStackTrace()); //CTEST
++        log.warn("[CTEST][SET-PARAM] " + "dnsMonitoringInterval" + getStackTrace()); //CTEST
          return (T) this;
      }
      public long getDnsMonitoringInterval() {
-+        log.warn("[CTEST][GET-PARAM] " + "DnsMonitoringInterval"); //CTEST
++        log.warn("[CTEST][GET-PARAM] " + "dnsMonitoringInterval"); //CTEST
          return dnsMonitoringInterval;
      }
 +    private static String getStackTrace() {
@@ -497,7 +497,7 @@ index b14e1b7f5..7cae51944 100644
      
  }
 diff --git a/redisson/src/main/java/org/redisson/config/ClusterServersConfig.java b/redisson/src/main/java/org/redisson/config/ClusterServersConfig.java
-index 9009ebc18..f8e6e8338 100644
+index 9009ebc18..6018c9d27 100644
 --- a/redisson/src/main/java/org/redisson/config/ClusterServersConfig.java
 +++ b/redisson/src/main/java/org/redisson/config/ClusterServersConfig.java
 @@ -18,6 +18,8 @@ package org.redisson.config;
@@ -522,16 +522,16 @@ index 9009ebc18..f8e6e8338 100644
          return this;
      }
      public List<String> getNodeAddresses() {
-+        log.warn("[CTEST][GET-PARAM] " + "NodeAddress"); //CTEST
++        log.warn("[CTEST][GET-PARAM] " + "nodeAddresses"); //CTEST
          return nodeAddresses;
      }
      public void setNodeAddresses(List<String> nodeAddresses) {
-+        log.warn("[CTEST][SET-PARAM] " + "NodeAddress" + getStackTrace()); //CTEST
++        log.warn("[CTEST][SET-PARAM] " + "nodeAddresses" + getStackTrace()); //CTEST
          this.nodeAddresses = nodeAddresses;
      }
  
      public int getScanInterval() {
-+        log.warn("[CTEST][GET-PARAM] " + "ScanInterval"); //CTEST
++        log.warn("[CTEST][GET-PARAM] " + "scanInterval"); //CTEST
          return scanInterval;
      }
      /**
@@ -539,12 +539,12 @@ index 9009ebc18..f8e6e8338 100644
       */
      public ClusterServersConfig setScanInterval(int scanInterval) {
          this.scanInterval = scanInterval;
-+        log.warn("[CTEST][SET-PARAM] " + "ScanInterval" + getStackTrace()); //CTEST
++        log.warn("[CTEST][SET-PARAM] " + "scanInterval" + getStackTrace()); //CTEST
          return this;
      }
  
      public boolean isCheckSlotsCoverage() {
-+        log.warn("[CTEST][GET-PARAM] " + "CheckSlotsCoverage"); //CTEST
++        log.warn("[CTEST][GET-PARAM] " + "checkSlotsCoverage"); //CTEST
          return checkSlotsCoverage;
      }
  
@@ -552,7 +552,7 @@ index 9009ebc18..f8e6e8338 100644
       */
      public ClusterServersConfig setCheckSlotsCoverage(boolean checkSlotsCoverage) {
          this.checkSlotsCoverage = checkSlotsCoverage;
-+        log.warn("[CTEST][SET-PARAM] " + "CheckSlotsCoverage" + getStackTrace()); //CTEST
++        log.warn("[CTEST][SET-PARAM] " + "checkSlotsCoverage" + getStackTrace()); //CTEST
          return this;
      }
  
@@ -560,7 +560,7 @@ index 9009ebc18..f8e6e8338 100644
      }
  
      public NatMapper getNatMapper() {
-+        log.warn("[CTEST][GET-PARAM] " + "NatMapper"); //CTEST
++        log.warn("[CTEST][GET-PARAM] " + "natMapper"); //CTEST
          return natMapper;
      }
  
@@ -568,7 +568,7 @@ index 9009ebc18..f8e6e8338 100644
       */
      public ClusterServersConfig setNatMapper(NatMapper natMapper) {
          this.natMapper = natMapper;
-+        log.warn("[CTEST][SET-PARAM] " + "NatMapper" + getStackTrace()); //CTEST
++        log.warn("[CTEST][SET-PARAM] " + "natMapper" + getStackTrace()); //CTEST
          return this;
      }
 -    
@@ -585,7 +585,7 @@ index 9009ebc18..f8e6e8338 100644
  
  }
 diff --git a/redisson/src/main/java/org/redisson/config/Config.java b/redisson/src/main/java/org/redisson/config/Config.java
-index 957bc6d67..4d4627cdc 100644
+index 957bc6d67..c260e6eea 100644
 --- a/redisson/src/main/java/org/redisson/config/Config.java
 +++ b/redisson/src/main/java/org/redisson/config/Config.java
 @@ -1,839 +1,899 @@
@@ -1574,7 +1574,7 @@ index 957bc6d67..4d4627cdc 100644
 +    }
 +
 +    public NettyHook getNettyHook() {
-+        log.warn("[CTEST][GET-PARAM] " + "NettyHook"); //CTEST
++        log.warn("[CTEST][GET-PARAM] " + "nettyHook"); //CTEST
 +        return nettyHook;
 +    }
 +
@@ -1586,7 +1586,7 @@ index 957bc6d67..4d4627cdc 100644
 +     */
 +    public Config setNettyHook(NettyHook nettyHook) {
 +        this.nettyHook = nettyHook;
-+        log.warn("[CTEST][SET-PARAM] " + "NettyHook" + getStackTrace()); //CTEST
++        log.warn("[CTEST][SET-PARAM] " + "nettyHook" + getStackTrace()); //CTEST
 +        return this;
 +    }
 +
@@ -1601,12 +1601,12 @@ index 957bc6d67..4d4627cdc 100644
 +     */
 +    public Config setCodec(Codec codec) {
 +        this.codec = codec;
-+        log.warn("[CTEST][SET-PARAM] " + "Codec" + getStackTrace()); //CTEST
++        log.warn("[CTEST][SET-PARAM] " + "codec" + getStackTrace()); //CTEST
 +        return this;
 +    }
 +
 +    public Codec getCodec() {
-+        log.warn("[CTEST][GET-PARAM] " + "Codec"); //CTEST
++        log.warn("[CTEST][GET-PARAM] " + "codec"); //CTEST
 +        return codec;
 +    }
 +
@@ -1618,7 +1618,7 @@ index 957bc6d67..4d4627cdc 100644
 +     * @return <code>true</code> if Redisson Reference feature enabled
 +     */
 +    public boolean isReferenceEnabled() {
-+        log.warn("[CTEST][GET-PARAM] " + "ReferenceEnabled"); //CTEST
++        log.warn("[CTEST][GET-PARAM] " + "referenceEnabled"); //CTEST
 +        return referenceEnabled;
 +    }
 +
@@ -1631,7 +1631,7 @@ index 957bc6d67..4d4627cdc 100644
 +     */
 +    public void setReferenceEnabled(boolean redissonReferenceEnabled) {
 +        this.referenceEnabled = redissonReferenceEnabled;
-+        log.warn("[CTEST][SET-PARAM] " + "ReferenceEnabled" + getStackTrace()); //CTEST
++        log.warn("[CTEST][SET-PARAM] " + "referenceEnabled" + getStackTrace()); //CTEST
 +    }
 +
 +    /**
@@ -1656,12 +1656,12 @@ index 957bc6d67..4d4627cdc 100644
 +    }
 +
 +    protected ClusterServersConfig getClusterServersConfig() {
-+        log.warn("[CTEST][GET-PARAM] " + "ClusterServersConfig"); //CTEST
++        log.warn("[CTEST][GET-PARAM] " + "clusterServersConfig"); //CTEST
 +        return clusterServersConfig;
 +    }
 +
 +    protected void setClusterServersConfig(ClusterServersConfig clusterServersConfig) {
-+        log.warn("[CTEST][SET-PARAM] " + "ClusterServersConfig" + getStackTrace()); //CTEST
++        log.warn("[CTEST][SET-PARAM] " + "clusterServersConfig" + getStackTrace()); //CTEST
 +        this.clusterServersConfig = clusterServersConfig;
 +    }
 +
@@ -1688,12 +1688,12 @@ index 957bc6d67..4d4627cdc 100644
 +    }
 +
 +    protected ReplicatedServersConfig getReplicatedServersConfig() {
-+        log.warn("[CTEST][GET-PARAM] " + "ReplicatedServersConfig"); //CTEST
++        log.warn("[CTEST][GET-PARAM] " + "replicatedServersConfig"); //CTEST
 +        return replicatedServersConfig;
 +    }
 +
 +    protected void setReplicatedServersConfig(ReplicatedServersConfig replicatedServersConfig) {
-+        log.warn("[CTEST][SET-PARAM] " + "ReplicatedServersConfig" + getStackTrace()); //CTEST
++        log.warn("[CTEST][SET-PARAM] " + "replicatedServersConfig" + getStackTrace()); //CTEST
 +        this.replicatedServersConfig = replicatedServersConfig;
 +    }
 +
@@ -1704,7 +1704,7 @@ index 957bc6d67..4d4627cdc 100644
 +     * @return ConnectionManager
 +     */
 +    ConnectionManager getConnectionManager() {
-+        log.warn("[CTEST][GET-PARAM] " + "ConnectionManager"); //CTEST
++        log.warn("[CTEST][GET-PARAM] " + "connectionManager"); //CTEST
 +        return connectionManager;
 +    }
 +
@@ -1716,7 +1716,7 @@ index 957bc6d67..4d4627cdc 100644
 +     * @param connectionManager for supply
 +     */
 +    public void useCustomServers(ConnectionManager connectionManager) {
-+        log.warn("[CTEST][SET-PARAM] " + "ConnectionManager" + getStackTrace()); //CTEST
++        log.warn("[CTEST][SET-PARAM] " + "connectionManager" + getStackTrace()); //CTEST
 +        this.connectionManager = connectionManager;
 +    }
 +
@@ -1742,12 +1742,12 @@ index 957bc6d67..4d4627cdc 100644
 +    }
 +
 +    protected SingleServerConfig getSingleServerConfig() {
-+        log.warn("[CTEST][GET-PARAM] " + "SingleServerConfig"); //CTEST
++        log.warn("[CTEST][GET-PARAM] " + "singleConnectionConfig"); //CTEST
 +        return singleServerConfig;
 +    }
 +
 +    protected void setSingleServerConfig(SingleServerConfig singleConnectionConfig) {
-+        log.warn("[CTEST][SET-PARAM] " + "SingleServerConfig" + getStackTrace()); //CTEST
++        log.warn("[CTEST][SET-PARAM] " + "singleConnectionConfig" + getStackTrace()); //CTEST
 +        this.singleServerConfig = singleConnectionConfig;
 +    }
 +
@@ -1773,13 +1773,13 @@ index 957bc6d67..4d4627cdc 100644
 +    }
 +
 +    protected SentinelServersConfig getSentinelServersConfig() {
-+        log.warn("[CTEST][GET-PARAM] " + "SentinelServersConfig"); //CTEST
++        log.warn("[CTEST][GET-PARAM] " + "sentinelConnectionConfig"); //CTEST
 +        return sentinelServersConfig;
 +    }
 +
 +    protected void setSentinelServersConfig(SentinelServersConfig sentinelConnectionConfig) {
 +        this.sentinelServersConfig = sentinelConnectionConfig;
-+        log.warn("[CTEST][SET-PARAM] " + "SentinelServersConfig" + getStackTrace()); //CTEST
++        log.warn("[CTEST][SET-PARAM] " + "sentinelConnectionConfig" + getStackTrace()); //CTEST
 +    }
 +
 +    /**
@@ -1804,12 +1804,12 @@ index 957bc6d67..4d4627cdc 100644
 +    }
 +
 +    protected MasterSlaveServersConfig getMasterSlaveServersConfig() {
-+        log.warn("[CTEST][GET-PARAM] " + "MasterSlaveServersConfig"); //CTEST
++        log.warn("[CTEST][GET-PARAM] " + "masterSlaveConnectionConfig"); //CTEST
 +        return masterSlaveServersConfig;
 +    }
 +
 +    protected void setMasterSlaveServersConfig(MasterSlaveServersConfig masterSlaveConnectionConfig) {
-+        log.warn("[CTEST][SET-PARAM] " + "MasterSlaveServersConfig" + getStackTrace()); //CTEST
++        log.warn("[CTEST][SET-PARAM] " + "masterSlaveConnectionConfig" + getStackTrace()); //CTEST
 +        this.masterSlaveServersConfig = masterSlaveConnectionConfig;
 +    }
 +
@@ -1822,7 +1822,7 @@ index 957bc6d67..4d4627cdc 100644
 +    }
 +
 +    public int getThreads() {
-+        log.warn("[CTEST][GET-PARAM] " + "Threads"); //CTEST
++        log.warn("[CTEST][GET-PARAM] " + "threads"); //CTEST
 +        return threads;
 +    }
 +
@@ -1840,7 +1840,7 @@ index 957bc6d67..4d4627cdc 100644
 +     */
 +    public Config setThreads(int threads) {
 +        this.threads = threads;
-+        log.warn("[CTEST][SET-PARAM] " + "Threads" + getStackTrace()); //CTEST
++        log.warn("[CTEST][SET-PARAM] " + "threads" + getStackTrace()); //CTEST
 +        return this;
 +    }
 +
@@ -1884,12 +1884,12 @@ index 957bc6d67..4d4627cdc 100644
 +     */
 +    public Config setTransportMode(TransportMode transportMode) {
 +        this.transportMode = transportMode;
-+        log.warn("[CTEST][SET-PARAM] " + "TransportMode" + getStackTrace()); //CTEST
++        log.warn("[CTEST][SET-PARAM] " + "transportMode" + getStackTrace()); //CTEST
 +        return this;
 +    }
 +
 +    public TransportMode getTransportMode() {
-+        log.warn("[CTEST][GET-PARAM] " + "TransportMode"); //CTEST
++        log.warn("[CTEST][GET-PARAM] " + "transportMode"); //CTEST
 +        return transportMode;
 +    }
 +
@@ -1905,12 +1905,12 @@ index 957bc6d67..4d4627cdc 100644
 +     */
 +    public Config setNettyThreads(int nettyThreads) {
 +        this.nettyThreads = nettyThreads;
-+        log.warn("[CTEST][SET-PARAM] " + "NettyThreads" + getStackTrace()); //CTEST
++        log.warn("[CTEST][SET-PARAM] " + "nettyThreads" + getStackTrace()); //CTEST
 +        return this;
 +    }
 +
 +    public int getNettyThreads() {
-+        log.warn("[CTEST][GET-PARAM] " + "NettyThreads"); //CTEST
++        log.warn("[CTEST][GET-PARAM] " + "nettyThreads"); //CTEST
 +        return nettyThreads;
 +    }
 +
@@ -1927,12 +1927,12 @@ index 957bc6d67..4d4627cdc 100644
 +     */
 +    public Config setExecutor(ExecutorService executor) {
 +        this.executor = executor;
-+        log.warn("[CTEST][SET-PARAM] " + "Executor" + getStackTrace()); //CTEST
++        log.warn("[CTEST][SET-PARAM] " + "executor" + getStackTrace()); //CTEST
 +        return this;
 +    }
 +
 +    public ExecutorService getExecutor() {
-+        log.warn("[CTEST][GET-PARAM] " + "Executor"); //CTEST
++        log.warn("[CTEST][GET-PARAM] " + "executor"); //CTEST
 +        return executor;
 +    }
 +
@@ -1954,12 +1954,12 @@ index 957bc6d67..4d4627cdc 100644
 +     */
 +    public Config setEventLoopGroup(EventLoopGroup eventLoopGroup) {
 +        this.eventLoopGroup = eventLoopGroup;
-+        log.warn("[CTEST][SET-PARAM] " + "EventLoopGroup" + getStackTrace()); //CTEST
++        log.warn("[CTEST][SET-PARAM] " + "eventLoopGroup" + getStackTrace()); //CTEST
 +        return this;
 +    }
 +
 +    public EventLoopGroup getEventLoopGroup() {
-+        log.warn("[CTEST][GET-PARAM] " + "EventLoopGroup"); //CTEST
++        log.warn("[CTEST][GET-PARAM] " + "eventLoopGroup"); //CTEST
 +        return eventLoopGroup;
 +    }
 +
@@ -1978,12 +1978,12 @@ index 957bc6d67..4d4627cdc 100644
 +     */
 +    public Config setLockWatchdogTimeout(long lockWatchdogTimeout) {
 +        this.lockWatchdogTimeout = lockWatchdogTimeout;
-+        log.warn("[CTEST][SET-PARAM] " + "LockWatchdogTimeout" + getStackTrace()); //CTEST
++        log.warn("[CTEST][SET-PARAM] " + "lockWatchdogTimeout" + getStackTrace()); //CTEST
 +        return this;
 +    }
 +
 +    public long getLockWatchdogTimeout() {
-+        log.warn("[CTEST][GET-PARAM] " + "LockWatchdogTimeout"); //CTEST
++        log.warn("[CTEST][GET-PARAM] " + "lockWatchdogTimeout"); //CTEST
 +        return lockWatchdogTimeout;
 +    }
 +
@@ -1999,12 +1999,12 @@ index 957bc6d67..4d4627cdc 100644
 +     */
 +    public Config setCheckLockSyncedSlaves(boolean checkLockSyncedSlaves) {
 +        this.checkLockSyncedSlaves = checkLockSyncedSlaves;
-+        log.warn("[CTEST][SET-PARAM] " + "CheckLockSyncedSlaves" + getStackTrace()); //CTEST
++        log.warn("[CTEST][SET-PARAM] " + "checkLockSyncedSlaves" + getStackTrace()); //CTEST
 +        return this;
 +    }
 +
 +    public boolean isCheckLockSyncedSlaves() {
-+        log.warn("[CTEST][GET-PARAM] " + "CheckLockSyncedSlaves"); //CTEST
++        log.warn("[CTEST][GET-PARAM] " + "checkLockSyncedSlaves"); //CTEST
 +        return checkLockSyncedSlaves;
 +    }
 +
@@ -2021,12 +2021,12 @@ index 957bc6d67..4d4627cdc 100644
 +     */
 +    public Config setKeepPubSubOrder(boolean keepPubSubOrder) {
 +        this.keepPubSubOrder = keepPubSubOrder;
-+        log.warn("[CTEST][SET-PARAM] " + "KeepPubSubOrder" + getStackTrace()); //CTEST
++        log.warn("[CTEST][SET-PARAM] " + "keepPubSubOrder" + getStackTrace()); //CTEST
 +        return this;
 +    }
 +
 +    public boolean isKeepPubSubOrder() {
-+        log.warn("[CTEST][GET-PARAM] " + "KeepPubSubOrder"); //CTEST
++        log.warn("[CTEST][GET-PARAM] " + "keepPubSubOrder"); //CTEST
 +        return keepPubSubOrder;
 +    }
 +
@@ -2183,17 +2183,17 @@ index 957bc6d67..4d4627cdc 100644
 +     */
 +    public Config setUseScriptCache(boolean useScriptCache) {
 +        this.useScriptCache = useScriptCache;
-+        log.warn("[CTEST][SET-PARAM] " + "UseScriptCache" + getStackTrace()); //CTEST
++        log.warn("[CTEST][SET-PARAM] " + "useScriptCache" + getStackTrace()); //CTEST
 +        return this;
 +    }
 +
 +    public boolean isUseScriptCache() {
-+        log.warn("[CTEST][GET-PARAM] " + "UseScriptCache"); //CTEST
++        log.warn("[CTEST][GET-PARAM] " + "useScriptCache"); //CTEST
 +        return useScriptCache;
 +    }
 +
 +    public int getMinCleanUpDelay() {
-+        log.warn("[CTEST][GET-PARAM] " + "MinCleanUpDelay"); //CTEST
++        log.warn("[CTEST][GET-PARAM] " + "minCleanUpDelay"); //CTEST
 +        return minCleanUpDelay;
 +    }
 +
@@ -2209,12 +2209,12 @@ index 957bc6d67..4d4627cdc 100644
 +     */
 +    public Config setMinCleanUpDelay(int minCleanUpDelay) {
 +        this.minCleanUpDelay = minCleanUpDelay;
-+        log.warn("[CTEST][SET-PARAM] " + "MinCleanUpDelay" + getStackTrace()); //CTEST
++        log.warn("[CTEST][SET-PARAM] " + "minCleanUpDelay" + getStackTrace()); //CTEST
 +        return this;
 +    }
 +
 +    public int getMaxCleanUpDelay() {
-+        log.warn("[CTEST][GET-PARAM] " + "MaxCleanUpDelay"); //CTEST
++        log.warn("[CTEST][GET-PARAM] " + "maxCleanUpDelay"); //CTEST
 +        return maxCleanUpDelay;
 +    }
 +
@@ -2230,12 +2230,12 @@ index 957bc6d67..4d4627cdc 100644
 +     */
 +    public Config setMaxCleanUpDelay(int maxCleanUpDelay) {
 +        this.maxCleanUpDelay = maxCleanUpDelay;
-+        log.warn("[CTEST][SET-PARAM] " + "MaxCleanUpDelay" + getStackTrace()); //CTEST
++        log.warn("[CTEST][SET-PARAM] " + "maxCleanUpDelay" + getStackTrace()); //CTEST
 +        return this;
 +    }
 +
 +    public int getCleanUpKeysAmount() {
-+        log.warn("[CTEST][GET-PARAM] " + "getCleanUpKeysAmount"); //CTEST
++        log.warn("[CTEST][GET-PARAM] " + "cleanUpKeysAmount"); //CTEST
 +        return cleanUpKeysAmount;
 +    }
 +
@@ -2251,12 +2251,12 @@ index 957bc6d67..4d4627cdc 100644
 +     */
 +    public Config setCleanUpKeysAmount(int cleanUpKeysAmount) {
 +        this.cleanUpKeysAmount = cleanUpKeysAmount;
-+        log.warn("[CTEST][SET-PARAM] " + "getCleanUpKeysAmount" + getStackTrace()); //CTEST
++        log.warn("[CTEST][SET-PARAM] " + "cleanUpKeysAmount" + getStackTrace()); //CTEST
 +        return this;
 +    }
 +
 +    public boolean isUseThreadClassLoader() {
-+        log.warn("[CTEST][GET-PARAM] " + "UseThreadClassLoader"); //CTEST
++        log.warn("[CTEST][GET-PARAM] " + "useThreadClassLoader"); //CTEST
 +        return useThreadClassLoader;
 +    }
 +
@@ -2272,12 +2272,12 @@ index 957bc6d67..4d4627cdc 100644
 +     */
 +    public Config setUseThreadClassLoader(boolean useThreadClassLoader) {
 +        this.useThreadClassLoader = useThreadClassLoader;
-+        log.warn("[CTEST][SET-PARAM] " + "UseThreadClassLoader" + getStackTrace()); //CTEST
++        log.warn("[CTEST][SET-PARAM] " + "useThreadClassLoader" + getStackTrace()); //CTEST
 +        return this;
 +    }
 +
 +    public long getReliableTopicWatchdogTimeout() {
-+        log.warn("[CTEST][GET-PARAM] " + "ReliableTopicWatchdogTimeout"); //CTEST
++        log.warn("[CTEST][GET-PARAM] " + "reliableTopicWatchdogTimeout"); //CTEST
 +        return reliableTopicWatchdogTimeout;
 +    }
 +
@@ -2295,12 +2295,12 @@ index 957bc6d67..4d4627cdc 100644
 +     */
 +    public Config setReliableTopicWatchdogTimeout(long timeout) {
 +        this.reliableTopicWatchdogTimeout = timeout;
-+        log.warn("[CTEST][SET-PARAM] " + "ReliableTopicWatchdogTimeout" + getStackTrace()); //CTEST
++        log.warn("[CTEST][SET-PARAM] " + "reliableTopicWatchdogTimeout" + getStackTrace()); //CTEST
 +        return this;
 +    }
 +
 +    public ConnectionListener getConnectionListener() {
-+        log.warn("[CTEST][GET-PARAM] " + "ConnectionListener"); //CTEST
++        log.warn("[CTEST][GET-PARAM] " + "connectionListener"); //CTEST
 +        return connectionListener;
 +    }
 +
@@ -2313,7 +2313,7 @@ index 957bc6d67..4d4627cdc 100644
 +     */
 +    public Config setConnectionListener(ConnectionListener connectionListener) {
 +        this.connectionListener = connectionListener;
-+        log.warn("[CTEST][SET-PARAM] " + "ConnectionListener" + getStackTrace()); //CTEST
++        log.warn("[CTEST][SET-PARAM] " + "connectionListener" + getStackTrace()); //CTEST
 +        return this;
 +    }
 +
@@ -2328,7 +2328,7 @@ index 957bc6d67..4d4627cdc 100644
 +    }
 +}
 diff --git a/redisson/src/main/java/org/redisson/config/MasterSlaveServersConfig.java b/redisson/src/main/java/org/redisson/config/MasterSlaveServersConfig.java
-index 99915f5fe..e74954b42 100644
+index 99915f5fe..3834e4ee3 100644
 --- a/redisson/src/main/java/org/redisson/config/MasterSlaveServersConfig.java
 +++ b/redisson/src/main/java/org/redisson/config/MasterSlaveServersConfig.java
 @@ -14,6 +14,8 @@
@@ -2353,11 +2353,11 @@ index 99915f5fe..e74954b42 100644
       */
      public MasterSlaveServersConfig setMasterAddress(String masterAddress) {
          this.masterAddress = masterAddress;
-+        log.warn("[CTEST][SET-PARAM] " + "MasterAddress" + getStackTrace()); //CTEST
++        log.warn("[CTEST][SET-PARAM] " + "masterAddress" + getStackTrace()); //CTEST
          return this;
      }
      public String getMasterAddress() {
-+        log.warn("[CTEST][GET-PARAM] " + "MasterAddress"); //CTEST
++        log.warn("[CTEST][GET-PARAM] " + "masterAddress"); //CTEST
          return masterAddress;
      }
  
@@ -2365,11 +2365,11 @@ index 99915f5fe..e74954b42 100644
          return this;
      }
      public Set<String> getSlaveAddresses() {
-+        log.warn("[CTEST][GET-PARAM] " + "SlaveAddresses"); //CTEST
++        log.warn("[CTEST][GET-PARAM] " + "slaveAddresses"); //CTEST
          return slaveAddresses;
      }
      public void setSlaveAddresses(Set<String> readAddresses) {
-+        log.warn("[CTEST][SET-PARAM] " + "SlaveAddresses" + getStackTrace()); //CTEST
++        log.warn("[CTEST][SET-PARAM] " + "slaveAddresses" + getStackTrace()); //CTEST
          this.slaveAddresses = readAddresses;
      }
  
@@ -2377,11 +2377,11 @@ index 99915f5fe..e74954b42 100644
       */
      public MasterSlaveServersConfig setDatabase(int database) {
          this.database = database;
-+        log.warn("[CTEST][SET-PARAM] " + "Database" + getStackTrace()); //CTEST
++        log.warn("[CTEST][SET-PARAM] " + "database" + getStackTrace()); //CTEST
          return this;
      }
      public int getDatabase() {
-+        log.warn("[CTEST][GET-PARAM] " + "Database"); //CTEST
++        log.warn("[CTEST][GET-PARAM] " + "database"); //CTEST
          return database;
      }
 +    private static String getStackTrace() {
@@ -2396,7 +2396,7 @@ index 99915f5fe..e74954b42 100644
  
  }
 diff --git a/redisson/src/main/java/org/redisson/config/RedissonNodeFileConfig.java b/redisson/src/main/java/org/redisson/config/RedissonNodeFileConfig.java
-index bbe665391..94e0f01f1 100644
+index bbe665391..4cf24421e 100644
 --- a/redisson/src/main/java/org/redisson/config/RedissonNodeFileConfig.java
 +++ b/redisson/src/main/java/org/redisson/config/RedissonNodeFileConfig.java
 @@ -16,6 +16,8 @@
@@ -2421,11 +2421,11 @@ index bbe665391..94e0f01f1 100644
       */
      public RedissonNodeFileConfig setMapReduceWorkers(int mapReduceWorkers) {
          this.mapReduceWorkers = mapReduceWorkers;
-+        log.warn("[CTEST][SET-PARAM] " + "MapReduceWorkers" + getStackTrace()); //CTEST
++        log.warn("[CTEST][SET-PARAM] " + "mapReduceWorkers" + getStackTrace()); //CTEST
          return this;
      }
      public int getMapReduceWorkers() {
-+        log.warn("[CTEST][GET-PARAM] " + "MapReduceWorkers"); //CTEST
++        log.warn("[CTEST][GET-PARAM] " + "mapReduceWorkers"); //CTEST
          return mapReduceWorkers;
      }
      
@@ -2433,11 +2433,11 @@ index bbe665391..94e0f01f1 100644
       */
      public RedissonNodeFileConfig setExecutorServiceWorkers(Map<String, Integer> workers) {
          this.executorServiceWorkers = workers;
-+        log.warn("[CTEST][SET-PARAM] " + "ExecutorServiceWorkers" + getStackTrace()); //CTEST
++        log.warn("[CTEST][SET-PARAM] " + "executorServiceWorkers" + getStackTrace()); //CTEST
          return this;
      }
      public Map<String, Integer> getExecutorServiceWorkers() {
-+        log.warn("[CTEST][GET-PARAM] " + "ExecutorServiceWorkers"); //CTEST
++        log.warn("[CTEST][GET-PARAM] " + "executorServiceWorkers"); //CTEST
          return executorServiceWorkers;
      }
      
@@ -2445,11 +2445,11 @@ index bbe665391..94e0f01f1 100644
       */
      public RedissonNodeFileConfig setRedissonNodeInitializer(RedissonNodeInitializer redissonNodeInitializer) {
          this.redissonNodeInitializer = redissonNodeInitializer;
-+        log.warn("[CTEST][SET-PARAM] " + "RedissonNodeInitializer" + getStackTrace()); //CTEST
++        log.warn("[CTEST][SET-PARAM] " + "redissonNodeInitializer" + getStackTrace()); //CTEST
          return this;
      }
      public RedissonNodeInitializer getRedissonNodeInitializer() {
-+        log.warn("[CTEST][GET-PARAM] " + "RedissonNodeInitializer"); //CTEST
++        log.warn("[CTEST][GET-PARAM] " + "redissonNodeInitializer"); //CTEST
          return redissonNodeInitializer;
      }
  
@@ -2468,7 +2468,7 @@ index bbe665391..94e0f01f1 100644
 +    }
  }
 diff --git a/redisson/src/main/java/org/redisson/config/ReplicatedServersConfig.java b/redisson/src/main/java/org/redisson/config/ReplicatedServersConfig.java
-index 83c7d03cc..617b1a247 100644
+index 83c7d03cc..d46a764c5 100644
 --- a/redisson/src/main/java/org/redisson/config/ReplicatedServersConfig.java
 +++ b/redisson/src/main/java/org/redisson/config/ReplicatedServersConfig.java
 @@ -14,6 +14,8 @@
@@ -2492,16 +2492,16 @@ index 83c7d03cc..617b1a247 100644
          return this;
      }
      public List<String> getNodeAddresses() {
-+        log.warn("[CTEST][GET-PARAM] " + "NodeAddresses"); //CTEST
++        log.warn("[CTEST][GET-PARAM] " + "nodeAddresses"); //CTEST
          return nodeAddresses;
      }
      public void setNodeAddresses(List<String> nodeAddresses) {
-+        log.warn("[CTEST][SET-PARAM] " + "NodeAddresses" + getStackTrace()); //CTEST
++        log.warn("[CTEST][SET-PARAM] " + "nodeAddresses" + getStackTrace()); //CTEST
          this.nodeAddresses = nodeAddresses;
      }
  
      public int getScanInterval() {
-+        log.warn("[CTEST][GET-PARAM] " + "ScanInterval"); //CTEST
++        log.warn("[CTEST][GET-PARAM] " + "scanInterval"); //CTEST
          return scanInterval;
      }
      /**
@@ -2509,7 +2509,7 @@ index 83c7d03cc..617b1a247 100644
       */
      public ReplicatedServersConfig setScanInterval(int scanInterval) {
          this.scanInterval = scanInterval;
-+        log.warn("[CTEST][SET-PARAM] " + "ScanInterval" + getStackTrace()); //CTEST
++        log.warn("[CTEST][SET-PARAM] " + "scanInterval" + getStackTrace()); //CTEST
          return this;
      }
  
@@ -2517,11 +2517,11 @@ index 83c7d03cc..617b1a247 100644
       */
      public ReplicatedServersConfig setDatabase(int database) {
          this.database = database;
-+        log.warn("[CTEST][SET-PARAM] " + "Database" + getStackTrace()); //CTEST
++        log.warn("[CTEST][SET-PARAM] " + "database" + getStackTrace()); //CTEST
          return this;
      }
      public int getDatabase() {
-+        log.warn("[CTEST][GET-PARAM] " + "Database"); //CTEST
++        log.warn("[CTEST][GET-PARAM] " + "database"); //CTEST
          return database;
      }
 -
@@ -2536,7 +2536,7 @@ index 83c7d03cc..617b1a247 100644
 +    }
  }
 diff --git a/redisson/src/main/java/org/redisson/config/SentinelServersConfig.java b/redisson/src/main/java/org/redisson/config/SentinelServersConfig.java
-index af48ab03a..a7d2a6afe 100644
+index af48ab03a..6e6b65dd9 100644
 --- a/redisson/src/main/java/org/redisson/config/SentinelServersConfig.java
 +++ b/redisson/src/main/java/org/redisson/config/SentinelServersConfig.java
 @@ -18,6 +18,8 @@ package org.redisson.config;
@@ -2560,11 +2560,11 @@ index af48ab03a..a7d2a6afe 100644
       */
      public SentinelServersConfig setMasterName(String masterName) {
          this.masterName = masterName;
-+        log.warn("[CTEST][SET-PARAM] " + "MasterName" + getStackTrace()); //CTEST
++        log.warn("[CTEST][SET-PARAM] " + "masterName" + getStackTrace()); //CTEST
          return this;
      }
      public String getMasterName() {
-+        log.warn("[CTEST][GET-PARAM] " + "MasterName"); //CTEST
++        log.warn("[CTEST][GET-PARAM] " + "masterName"); //CTEST
          return masterName;
      }
  
@@ -2572,12 +2572,12 @@ index af48ab03a..a7d2a6afe 100644
       */
      public SentinelServersConfig setSentinelUsername(String sentinelUsername) {
          this.sentinelUsername = sentinelUsername;
-+        log.warn("[CTEST][SET-PARAM] " + "SentinelUsername" + getStackTrace()); //CTEST
++        log.warn("[CTEST][SET-PARAM] " + "sentinelUsername" + getStackTrace()); //CTEST
          return this;
      }
  
      public String getSentinelUsername() {
-+        log.warn("[CTEST][GET-PARAM] " + "SentinelUsername"); //CTEST
++        log.warn("[CTEST][GET-PARAM] " + "sentinelUsername"); //CTEST
          return sentinelUsername;
      }
  
@@ -2585,11 +2585,11 @@ index af48ab03a..a7d2a6afe 100644
       */
      public SentinelServersConfig setSentinelPassword(String sentinelPassword) {
          this.sentinelPassword = sentinelPassword;
-+        log.warn("[CTEST][SET-PARAM] " + "SentinelPassword" + getStackTrace()); //CTEST
++        log.warn("[CTEST][SET-PARAM] " + "sentinelPassword" + getStackTrace()); //CTEST
          return this;
      }
      public String getSentinelPassword() {
-+        log.warn("[CTEST][GET-PARAM] " + "SentinelPassword"); //CTEST
++        log.warn("[CTEST][GET-PARAM] " + "sentinelPassword"); //CTEST
          return sentinelPassword;
      }
  
@@ -2597,12 +2597,12 @@ index af48ab03a..a7d2a6afe 100644
          return this;
      }
      public List<String> getSentinelAddresses() {
-+        log.warn("[CTEST][GET-PARAM] " + "SentinelAddresses"); //CTEST
++        log.warn("[CTEST][GET-PARAM] " + "sentinelAddresses"); //CTEST
          return sentinelAddresses;
      }
      public void setSentinelAddresses(List<String> sentinelAddresses) {
          this.sentinelAddresses = sentinelAddresses;
-+        log.warn("[CTEST][SET-PARAM] " + "SentinelAddresses" + getStackTrace()); //CTEST
++        log.warn("[CTEST][SET-PARAM] " + "sentinelAddresses" + getStackTrace()); //CTEST
      }
  
      /**
@@ -2610,16 +2610,16 @@ index af48ab03a..a7d2a6afe 100644
       */
      public SentinelServersConfig setDatabase(int database) {
          this.database = database;
-+        log.warn("[CTEST][SET-PARAM] " + "Database" + getStackTrace()); //CTEST
++        log.warn("[CTEST][SET-PARAM] " + "database" + getStackTrace()); //CTEST
          return this;
      }
      public int getDatabase() {
-+        log.warn("[CTEST][GET-PARAM] " + "Database"); //CTEST
++        log.warn("[CTEST][GET-PARAM] " + "database"); //CTEST
          return database;
      }
  
      public int getScanInterval() {
-+        log.warn("[CTEST][GET-PARAM] " + "ScanInterval"); //CTEST
++        log.warn("[CTEST][GET-PARAM] " + "scanInterval"); //CTEST
          return scanInterval;
      }
      /**
@@ -2627,7 +2627,7 @@ index af48ab03a..a7d2a6afe 100644
       */
      public SentinelServersConfig setScanInterval(int scanInterval) {
          this.scanInterval = scanInterval;
-+        log.warn("[CTEST][SET-PARAM] " + "ScanInterval" + getStackTrace()); //CTEST
++        log.warn("[CTEST][SET-PARAM] " + "scanInterval" + getStackTrace()); //CTEST
          return this;
      }
  
@@ -2635,7 +2635,7 @@ index af48ab03a..a7d2a6afe 100644
      }
  
      public NatMapper getNatMapper() {
-+        log.warn("[CTEST][GET-PARAM] " + "NatMapper"); //CTEST
++        log.warn("[CTEST][GET-PARAM] " + "natMapper"); //CTEST
          return natMapper;
      }
  
@@ -2643,12 +2643,12 @@ index af48ab03a..a7d2a6afe 100644
       */
      public SentinelServersConfig setNatMapper(NatMapper natMapper) {
          this.natMapper = natMapper;
-+        log.warn("[CTEST][SET-PARAM] " + "NatMapper" + getStackTrace()); //CTEST
++        log.warn("[CTEST][SET-PARAM] " + "natMapper" + getStackTrace()); //CTEST
          return this;
      }
  
      public boolean isCheckSentinelsList() {
-+        log.warn("[CTEST][GET-PARAM] " + "CheckSentinelsList"); //CTEST
++        log.warn("[CTEST][GET-PARAM] " + "checkSentinelsList"); //CTEST
          return checkSentinelsList;
      }
  
@@ -2656,12 +2656,12 @@ index af48ab03a..a7d2a6afe 100644
       */
      public SentinelServersConfig setCheckSentinelsList(boolean checkSentinelsList) {
          this.checkSentinelsList = checkSentinelsList;
-+        log.warn("[CTEST][SET-PARAM] " + "CheckSentinelsList" + getStackTrace()); //CTEST
++        log.warn("[CTEST][SET-PARAM] " + "checkSentinelsList" + getStackTrace()); //CTEST
          return this;
      }
  
      public boolean isCheckSlaveStatusWithSyncing() {
-+        log.warn("[CTEST][GET-PARAM] " + "CheckSlaveStatusWithSyncing"); //CTEST
++        log.warn("[CTEST][GET-PARAM] " + "checkSlaveStatusWithSyncing"); //CTEST
          return checkSlaveStatusWithSyncing;
      }
  
@@ -2669,12 +2669,12 @@ index af48ab03a..a7d2a6afe 100644
       */
      public SentinelServersConfig setCheckSlaveStatusWithSyncing(boolean checkSlaveStatusWithSyncing) {
          this.checkSlaveStatusWithSyncing = checkSlaveStatusWithSyncing;
-+        log.warn("[CTEST][SET-PARAM] " + "CheckSlaveStatusWithSyncing" + getStackTrace()); //CTEST
++        log.warn("[CTEST][SET-PARAM] " + "checkSlaveStatusWithSyncing" + getStackTrace()); //CTEST
          return this;
      }
  
      public boolean isSentinelsDiscovery() {
-+        log.warn("[CTEST][GET-PARAM] " + "SentinelsDiscovery"); //CTEST
++        log.warn("[CTEST][GET-PARAM] " + "sentinelsDiscovery"); //CTEST
          return sentinelsDiscovery;
      }
  
@@ -2682,7 +2682,7 @@ index af48ab03a..a7d2a6afe 100644
       */
      public SentinelServersConfig setSentinelsDiscovery(boolean sentinelsDiscovery) {
          this.sentinelsDiscovery = sentinelsDiscovery;
-+        log.warn("[CTEST][SET-PARAM] " + "SentinelsDiscovery" + getStackTrace()); //CTEST
++        log.warn("[CTEST][SET-PARAM] " + "sentinelsDiscovery" + getStackTrace()); //CTEST
          return this;
      }
 +
@@ -2697,7 +2697,7 @@ index af48ab03a..a7d2a6afe 100644
 +    }
  }
 diff --git a/redisson/src/main/java/org/redisson/config/SingleServerConfig.java b/redisson/src/main/java/org/redisson/config/SingleServerConfig.java
-index 54279749d..483cf1960 100644
+index 54279749d..2fe29933a 100644
 --- a/redisson/src/main/java/org/redisson/config/SingleServerConfig.java
 +++ b/redisson/src/main/java/org/redisson/config/SingleServerConfig.java
 @@ -14,7 +14,8 @@
@@ -2722,11 +2722,11 @@ index 54279749d..483cf1960 100644
       */
      public SingleServerConfig setConnectionPoolSize(int connectionPoolSize) {
          this.connectionPoolSize = connectionPoolSize;
-+        log.warn("[CTEST][SET-PARAM] " + "ConnectionPoolSize" + getStackTrace()); //CTEST
++        log.warn("[CTEST][SET-PARAM] " + "connectionPoolSize" + getStackTrace()); //CTEST
          return this;
      }
      public int getConnectionPoolSize() {
-+        log.warn("[CTEST][GET-PARAM] " + "ConnectionPoolSize"); //CTEST
++        log.warn("[CTEST][GET-PARAM] " + "connectionPoolSize"); //CTEST
          return connectionPoolSize;
      }
  
@@ -2734,11 +2734,11 @@ index 54279749d..483cf1960 100644
       */
      public SingleServerConfig setSubscriptionConnectionPoolSize(int subscriptionConnectionPoolSize) {
          this.subscriptionConnectionPoolSize = subscriptionConnectionPoolSize;
-+        log.warn("[CTEST][SET-PARAM] " + "SubscriptionConnectionPoolSize" + getStackTrace()); //CTEST
++        log.warn("[CTEST][SET-PARAM] " + "subscriptionConnectionPoolSize" + getStackTrace()); //CTEST
          return this;
      }
      public int getSubscriptionConnectionPoolSize() {
-+        log.warn("[CTEST][GET-PARAM] " + "SubscriptionConnectionPoolSize"); //CTEST
++        log.warn("[CTEST][GET-PARAM] " + "subscriptionConnectionPoolSize"); //CTEST
          return subscriptionConnectionPoolSize;
      }
  
@@ -2746,12 +2746,12 @@ index 54279749d..483cf1960 100644
      public SingleServerConfig setAddress(String address) {
          if (address != null) {
              this.address = address;
-+            log.warn("[CTEST][SET-PARAM] " + "Address" + getStackTrace()); //CTEST
++            log.warn("[CTEST][SET-PARAM] " + "address" + getStackTrace()); //CTEST
          }
          return this;
      }
      public String getAddress() {
-+        log.warn("[CTEST][GET-PARAM] " + "Address"); //CTEST
++        log.warn("[CTEST][GET-PARAM] " + "address"); //CTEST
          return address;
      }
  
@@ -2759,11 +2759,11 @@ index 54279749d..483cf1960 100644
       */
      public SingleServerConfig setDnsMonitoringInterval(long dnsMonitoringInterval) {
          this.dnsMonitoringInterval = dnsMonitoringInterval;
-+        log.warn("[CTEST][SET-PARAM] " + "DnsMonitoringInterval" + getStackTrace()); //CTEST
++        log.warn("[CTEST][SET-PARAM] " + "dnsMonitoringInterval" + getStackTrace()); //CTEST
          return this;
      }
      public long getDnsMonitoringInterval() {
-+        log.warn("[CTEST][GET-PARAM] " + "DnsMonitoringInterval"); //CTEST
++        log.warn("[CTEST][GET-PARAM] " + "dnsMonitoringInterval"); //CTEST
          return dnsMonitoringInterval;
      }
  
@@ -2771,11 +2771,11 @@ index 54279749d..483cf1960 100644
       */
      public SingleServerConfig setSubscriptionConnectionMinimumIdleSize(int subscriptionConnectionMinimumIdleSize) {
          this.subscriptionConnectionMinimumIdleSize = subscriptionConnectionMinimumIdleSize;
-+        log.warn("[CTEST][SET-PARAM] " + "SubscriptionConnectionMinimumIdleSize" + getStackTrace()); //CTEST
++        log.warn("[CTEST][SET-PARAM] " + "subscriptionConnectionMinimumIdleSize" + getStackTrace()); //CTEST
          return this;
      }
      public int getSubscriptionConnectionMinimumIdleSize() {
-+        log.warn("[CTEST][GET-PARAM] " + "SubscriptionConnectionMinimumIdleSize"); //CTEST
++        log.warn("[CTEST][GET-PARAM] " + "subscriptionConnectionMinimumIdleSize"); //CTEST
          return subscriptionConnectionMinimumIdleSize;
      }
  
@@ -2783,11 +2783,11 @@ index 54279749d..483cf1960 100644
       */
      public SingleServerConfig setConnectionMinimumIdleSize(int connectionMinimumIdleSize) {
          this.connectionMinimumIdleSize = connectionMinimumIdleSize;
-+        log.warn("[CTEST][SET-PARAM] " + "ConnectionMinimumIdleSize" + getStackTrace()); //CTEST
++        log.warn("[CTEST][SET-PARAM] " + "connectionMinimumIdleSize" + getStackTrace()); //CTEST
          return this;
      }
      public int getConnectionMinimumIdleSize() {
-+        log.warn("[CTEST][GET-PARAM] " + "ConnectionMinimumIdleSize"); //CTEST
++        log.warn("[CTEST][GET-PARAM] " + "connectionMinimumIdleSize"); //CTEST
          return connectionMinimumIdleSize;
      }
  
@@ -2795,11 +2795,11 @@ index 54279749d..483cf1960 100644
       */
      public SingleServerConfig setDatabase(int database) {
          this.database = database;
-+        log.warn("[CTEST][SET-PARAM] " + "Database" + getStackTrace()); //CTEST
++        log.warn("[CTEST][SET-PARAM] " + "database" + getStackTrace()); //CTEST
          return this;
      }
      public int getDatabase() {
-+        log.warn("[CTEST][GET-PARAM] " + "Database"); //CTEST
++        log.warn("[CTEST][GET-PARAM] " + "database"); //CTEST
          return database;
      }
  
