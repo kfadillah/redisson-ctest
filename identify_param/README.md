@@ -4,7 +4,7 @@ The module is used to generate the pair of configuration parameters and test met
 ## Prerequisites
 - Java 8
 - Redis server (Only on Linux) [Link to download](https://redis.io/docs/getting-started/installation/install-redis-on-linux/)
-- 
+
 ## Required files to generate mapping
 - test_method_list.json - `get_test_method_list.py` will generate a list of test methods used by redisson.
 - conf_params.txt - manually collected from `app/redisson/redisson/src/main/java/org/redisson/config`
