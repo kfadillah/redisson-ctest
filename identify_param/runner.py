@@ -92,8 +92,7 @@ class Runner:
                     return False
 
     def parse(self, lines, method):
-        is_getter = False
-        is_setter = False
+        getter, setter = set(), set()
         for line in lines:
             line = line.strip("\n")
             if "[CTEST][GET-PARAM]" in line:
@@ -124,20 +123,20 @@ class Runner:
                             self.setter_record.flush()
                             setter.add(full_name)
 
-        if is_getter or is_setter:
-            if is_getter:
+        if len(getter) or len(setter):
+            if len(getter):
                 print(method + " is a getter")
                 self.getter_list.append(method)
-            if is_setter:
+            if len(setter):
                 print(method + " is a setter")
                 self.setter_list.append(method)
         else:
             self.other_list.append(method)
 
     def test_pass_or_not(self, log_content):
-        if "Tests run: 1" in log_content:
+        if "BUILD SUCCESS" in log_content:
             return True
-        elif "Tests run: 0" in log_content:
+        elif "BUILD FAIL" in log_content:
             return False
         else:
             assert False, "wrong log content"
@@ -193,10 +192,11 @@ class Runner:
                 print(method + " failure")
                 self.failure_list.append(method)
                 continue
-
+            
             class_name = method.split("#")[0]
             suffix_filename_to_check = class_name + "-output.txt"
             full_path = self.get_full_report_path(suffix_filename_to_check)
+            print(full_path)
             if full_path == "none":
                 print("no report for " + method)
                 self.no_report_list.append(method)     

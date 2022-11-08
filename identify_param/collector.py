@@ -23,6 +23,7 @@ class Collector:
         print("total number of configuration parameters: " + str(len(self.params)))
 
     def parse_getter_record_file(self):
+        print(self.getter_record_file)
         for line in open(self.getter_record_file).readlines():
             line = line.strip("\n")
             class_pound_method = line.split(" ")[0]
