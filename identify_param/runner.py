@@ -40,6 +40,8 @@ class Runner:
         return "none"
 
     def traceInTestCode(self, trace):
+        if self.module == "redisson":
+            return True
         if "Test" in trace:
             return True
         if self.module == "hadoop-common" or self.module == "hadoop-hdfs" or self.module == "hbase-server":
@@ -225,8 +227,8 @@ if __name__ == "__main__":
     parser.add_option("-a", action="store_true", dest="aggressive", default=False,
                   help="Be aggressive when looking for setters and ignore stacktrace.")
     (options, args) = parser.parse_args()
-    module = args[0]
+    module = "redisson"
     aggr = options.aggressive
-    runner = Runner(module, aggr)
+    runner = Runner(module, False)
     runner.run_individual_testmethod()
     print("total time: {} mins".format((time.time() - s) / 60))
