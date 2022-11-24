@@ -1,49 +1,23 @@
 # Running Ctests
 
-### Description
+## Identify Parameters
+The module is used to generate the pair of configuration parameters and test methods against Redisson
 
-See **[Running Ctests](https://github.com/xlab-uiuc/openctest/tree/main/core#2-running-ctests)**.
+## Prerequisites
+- Java 8
+- Redis server (Only on Linux) [Link to download](https://redis.io/docs/getting-started/installation/install-redis-on-linux/)
 
-### Instruction
+## How to set up redisson
+- clone redisson, `git clone https://github.com/redisson/redisson.git app/redisson && cd app/redisson`
+- checkout commit, `git checkout 96da883`
+- apply logging patch, `git apply ../../ctest-logging.patch`
+- check setup, `cd app/redisson/redisson && mvn test -Dtest=org.redisson.CommandHandlersTest#testEncoder -DredisBinary=[REDIS SERVER PATH]`
 
-*First*, specify data input in `program_input.py`. For example,
+## How to run ctest
+Run single test with modified configuration value:
 
-```python
-p_input = {
-    "run_mode": "run_ctest",
-    "project": "hadoop-common",
-    "mapping_path": "../../data/ctest_mapping/opensource-hadoop-common.json",
-    "conf_file_dir": "sample-hadoop-common",
-    "display_mode": False,
-    "use_surefire": True,
-    "maven_args": [],
-    "cmd_timeout": None,
-}
-```
-*For `alluxio-core`, please specify
-```
-"maven_args": ["-DfailIfNoTests=false"]
-```
+`python run_single_ctest.py TESTNAME MODIFIEDCONF`
 
-*Second*, run `./run_ctest.sh`. Each correctly formatted configuration file in the `conf_file_dir` folder will be tested sequentially.
+Example command:
 
-### Result
-
-**Test result** is collected per configuration file and stored in `run_ctest_result/<project>/test_reuslt_<conf_file_name>.tsv`.  
-`run_ctest_result/<project>/missing_test_<conf_file_name>.tsv` stores ctests whose Maven test report was missing while the test result is being collected.
-
-Test result file is formatted as
-```
-ctest1	test_result	testcase_time	
-ctest2	test_result	testcase_time
-...
-```
-
-`test_result` is `p` if ctest passed, otherwise `f`. Skipped tests should be filtered automatically during [ctest generation](https://github.com/xlab-uiuc/openctest/tree/main/core#1-generating-ctests).
-
-
-### Directory Structure
-
-- program_input.py: specify data input for generating ctests, i.e., configuration files to be tested, "parameter -> ctests" json mapping.
-- run_ctest.sh: run ctests for specified project.
-- main.py: main function to run ctests against configuration files and collect test results
+`python run_single_ctest.py org.redisson.RedissonDequeTest#testAddFirstOrigin threads=16`

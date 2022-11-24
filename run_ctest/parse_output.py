@@ -13,13 +13,18 @@ project = p_input["project"]
 
 def parse_surefire(clsname, expected_methods):
     """method expected to show up in surefire"""
+    tests = list(expected_methods)
+    test_name = tests[0]
     expected_methods = set(expected_methods)
     times = {}
     errors = {}
     try:
         fpath = None
         for surefire_path in SUREFIRE_DIR[project]:
-            xml_path = os.path.join(surefire_path, SUREFIRE_XML.format(clsname))
+            if project == 'redisson':
+                xml_path = os.path.join(surefire_path, SUREFIRE_XML.format(clsname + '-' + test_name))
+            else:
+                xml_path = os.path.join(surefire_path, SUREFIRE_XML.format(clsname))
             if os.path.exists(xml_path):
                 print(">>>>[ctest_core] surefire report path: " + xml_path)
                 fpath = open(xml_path)
