@@ -18,8 +18,8 @@ CTEST_HADOOP_DIR = os.path.join(APP_DIR, "ctest-hadoop")
 CTEST_HBASE_DIR = os.path.join(APP_DIR, "ctest-hbase")
 CTEST_ZK_DIR = os.path.join(APP_DIR, "ctest-zookeeper")
 CTEST_ALLUXIO_DIR = os.path.join(APP_DIR, "ctest-alluxio")
-CTEST_REDISSON_DIR = os.path.join(APP_DIR, "redisson")
-
+# CTEST_REDISSON_DIR = os.path.join(APP_DIR, "redisson")
+CTEST_REDISSON_DIR = os.path.join(RUN_CTEST_DIR, "app/redisson")
 PROJECT_DIR = {
     HCOMMON: CTEST_HADOOP_DIR,
     HDFS: CTEST_HADOOP_DIR,
@@ -80,9 +80,7 @@ DEFAULT_CONF_FILE = {
     HBASE: os.path.join(DEFAULT_CONF_DIR, HBASE + "-default.tsv"),
     ALLUXIO: os.path.join(DEFAULT_CONF_DIR, ALLUXIO + "-default.tsv"),
     ZOOKEEPER: os.path.join(DEFAULT_CONF_DIR, ZOOKEEPER + "-default.tsv"),
-    REDISSON: os.path.join(DEFAULT_CONF_DIR, REDISSON + "-default.tsv")
 }
-
 
 # injecting config file location
 INJECTION_PATH = {
@@ -104,7 +102,7 @@ INJECTION_PATH = {
         os.path.join(CTEST_ALLUXIO_DIR, "core/alluxio-ctest.properties")
     ],
     REDISSON: [
-        os.path.join(CTEST_REDISSON_DIR, "test/resources/ctest-injection.yaml")
+        os.path.join(CTEST_REDISSON_DIR, MODULE_SUBDIR[REDISSON],"src/test/resources/ctest-injection.yaml")
     ]
 }
 
@@ -117,9 +115,9 @@ MT_FILE = "missing_test_{id}.list"
 FAIL = "f" # test failed
 PASS = "p" # test passed
 GOOD_VAL = "GOOD"
+
 BAD_VAL = "BAD"
 SKIP_VAL = "SKIP"
-
 CTESTS_DIR = os.path.join(GEN_CTEST_DIR, "ctest_mapping")
 os.makedirs(CTESTS_DIR, exist_ok=True)
 CTESTS_FILE = "ctests-{project}.json"
