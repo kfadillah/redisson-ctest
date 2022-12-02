@@ -227,7 +227,7 @@ if __name__ == "__main__":
     parser.add_option("-a", action="store_true", dest="aggressive", default=False,
                   help="Be aggressive when looking for setters and ignore stacktrace.")
     (options, args) = parser.parse_args()
-    module = "redisson"
+    module = args[0]
     aggr = options.aggressive
     runner = Runner(module, False)
     runner.run_individual_testmethod()
