@@ -131,15 +131,14 @@ index 35bf85342..9f0919488 100644
  
                              <exclude>RedissonMapReactiveTest</exclude>
 diff --git a/redisson/src/main/java/org/redisson/config/BaseConfig.java b/redisson/src/main/java/org/redisson/config/BaseConfig.java
-index 79ee412ba..fa9a87757 100644
+index 79ee412ba..691351882 100644
 --- a/redisson/src/main/java/org/redisson/config/BaseConfig.java
 +++ b/redisson/src/main/java/org/redisson/config/BaseConfig.java
-@@ -20,7 +20,7 @@ import org.slf4j.Logger;
+@@ -20,7 +20,6 @@ import org.slf4j.Logger;
  import org.slf4j.LoggerFactory;
  
  import java.net.URL;
 -
-+import java.io.File;
  /**
   * 
   * @author Nikita Koksharov
