@@ -12,7 +12,7 @@ You need to put all generated files into the `results/redisson` directory.
 
 ## How to set up redisson
 - clone redisson, `git clone https://github.com/redisson/redisson.git app/redisson && cd app/redisson`
-- checkout commit, `git checkout 96da883`
+- checkout commit, `git checkout redisson-3.18.0`
 - apply logging patch, `git apply ../../ctest-logging.patch`
 - check setup, `cd app/redisson/redisson && mvn test -Dtest=org.redisson.CommandHandlersTest#testEncoder -DredisBinary=[REDIS SERVER PATH]`
 
