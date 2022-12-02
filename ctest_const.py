@@ -102,7 +102,7 @@ INJECTION_PATH = {
         os.path.join(CTEST_ALLUXIO_DIR, "core/alluxio-ctest.properties")
     ],
     REDISSON: [
-        os.path.join(CTEST_REDISSON_DIR, MODULE_SUBDIR[REDISSON],"src/test/resources/ctest-injection.yaml")
+        os.path.join(CTEST_REDISSON_DIR, MODULE_SUBDIR[REDISSON],"src/test/resources/org/redisson/ctest-injection.yaml")
     ]
 }
 
