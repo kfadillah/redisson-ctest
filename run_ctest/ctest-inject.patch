@@ -144,7 +144,7 @@ index 79ee412ba..fa9a87757 100644
   * 
   * @author Nikita Koksharov
 diff --git a/redisson/src/test/java/org/redisson/BaseTest.java b/redisson/src/test/java/org/redisson/BaseTest.java
-index a5a05a2d2..986ed8c70 100644
+index a5a05a2d2..1f0ff3ff6 100644
 --- a/redisson/src/test/java/org/redisson/BaseTest.java
 +++ b/redisson/src/test/java/org/redisson/BaseTest.java
 @@ -7,6 +7,7 @@ import org.junit.jupiter.api.BeforeAll;
@@ -181,7 +181,7 @@ index a5a05a2d2..986ed8c70 100644
 +            cfg.useSingleServer()
 +                .setAddress(RedisRunner.getDefaultRedisServerBindAddressAndPort());
 +            return cfg;
-+        } catch (Exception e) {
++        } catch (IOException e) {
 +            e.printStackTrace();
 +            return null;
 +        }
